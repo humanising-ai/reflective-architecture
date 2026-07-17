@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "The Reflective Architecture: Presence-Centered AI for Deep Listening"
+message: "If you use this work, please cite it as below."
+authors:
+  - family-names: Zuffa
+    given-names: Paolo
+    email: paolo.zuffa@gmail.com
+date-released: 2026-07-17
+url: "https://github.com/humanising-ai/reflective-architecture"
+license: CC-BY-NC-4.0
+version: "2.1"
+type: software
+keywords:
+  - artificial intelligence
+  - conversational AI
+  - AI ethics
+  - human-computer interaction
+  - reflective practice
