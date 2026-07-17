@@ -34,6 +34,8 @@ Source HTML for each document is in `docs/html/`.
 
 This work is licensed under [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](LICENSE.md). You may share and adapt the material for non-commercial purposes with attribution.
 
+For commercial licensing inquiries, contact **paolo.zuffa@gmail.com**.
+
 ## How to cite
 
 See [`CITATION.cff`](CITATION.cff) for full citation metadata. In short:
