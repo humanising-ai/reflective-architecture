@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Reflective — MVP Scope &amp; Product Requirements v1.0</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+
+<style>
+/* ===== PAGE SETUP ===== */
+@page {
+  size: A4;
+  margin: 2.5cm 2.5cm;
+  @top-center {
+    content: string(doctitle);
+    font-family: Georgia, serif;
+    font-size: 8pt;
+    color: #999;
+    letter-spacing: 0.02em;
+  }
+  @bottom-center {
+    content: counter(page);
+    font-family: Georgia, serif;
+    font-size: 8.5pt;
+    color: #888;
+  }
+}
+@page :first {
+  margin: 0;
+  @top-center { content: none; }
+  @bottom-center { content: none; }
+}
+@page cover {
+  margin: 0;
+  @top-center { content: none; }
+  @bottom-center { content: none; }
+}
+
+/* ===== BASE ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #FAFAF7;
+  color: #2C2C2C;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11pt;
+  line-height: 1.65;
+}
+body {
+  margin: 0;
+  string-set: doctitle "The Reflective — MVP Scope & Product Requirements — Paolo Zuffa & AI — July 2026";
+}
+
+/* ===== OVERFLOW PREVENTION ===== */
+pre, table, figure, img, svg, blockquote, code {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+pre { overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; }
+figure { page-break-inside: avoid; max-height: 70vh; height: auto; width: 100%; object-fit: contain; }
+a { word-break: break-all; }
+.katex-display { overflow-x: auto; }
+
+/* ===== COVER PAGE ===== */
+.cover {
+  page: cover;
+  width: 210mm;
+  height: 297mm;
+  margin: 0;
+  box-sizing: border-box;
+  background: #FAFAF7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4cm 3.5cm 3.2cm 3.5cm;
+  page-break-after: always;
+  overflow: hidden;
+}
+.cover-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+.cover h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 38pt;
+  font-weight: 400;
+  color: #1a1a1a;
+  text-align: center;
+  line-height: 1.15;
+  margin: 0 0 0.2cm 0;
+  padding: 0;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  letter-spacing: -0.02em;
+  string-set: doctitle "";
+}
+.cover-subtitle {
+  font-family: Georgia, serif;
+  font-size: 16pt;
+  font-weight: 400;
+  color: #555;
+  text-align: center;
+  line-height: 1.35;
+  margin: 0 0 0.3cm 0;
+  font-style: italic;
+}
+.cover-version {
+  font-family: Georgia, serif;
+  font-size: 10pt;
+  color: #999;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+.cover-rule {
+  width: 3.5cm;
+  height: 1px;
+  background: #ccc;
+  margin: 1.2cm auto;
+}
+.cover-meta {
+  font-family: Georgia, serif;
+  font-size: 9.5pt;
+  color: #777;
+  text-align: center;
+  line-height: 1.7;
+}
+.cover-meta-label {
+  font-style: normal;
+  font-weight: 700;
+  color: #555;
+}
+.cover-companions {
+  font-family: Georgia, serif;
+  font-size: 8.5pt;
+  color: #aaa;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.6;
+  margin-top: 0.4cm;
+}
+.cover-bottom {
+  text-align: center;
+  border-top: 1px solid #ddd;
+  padding-top: 0.55cm;
+  width: 100%;
+}
+.cover-bottom p {
+  font-family: Georgia, serif;
+  font-size: 10pt;
+  color: #555;
+  margin: 0.12cm 0;
+  line-height: 1.55;
+}
+.cover-status {
+  font-size: 8.5pt;
+  color: #aaa;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 0.3cm !important;
+}
+
+/* ===== BODY TYPOGRAPHY ===== */
+h1 {
+  font-family: Georgia, serif;
+  font-size: 14pt;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0.9cm 0 0.25cm 0;
+  line-height: 1.25;
+  page-break-after: avoid;
+}
+h2 {
+  font-family: Georgia, serif;
+  font-size: 11.5pt;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0.6cm 0 0.18cm 0;
+  line-height: 1.3;
+  page-break-after: avoid;
+}
+p {
+  margin: 0 0 0.5em 0;
+  text-align: justify;
+  text-align-last: left;
+}
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+/* ===== PART DIVIDER ===== */
+.part-divider {
+  margin: 1.1cm 0 0.6cm 0;
+  padding: 0.35cm 0 0.35cm 0;
+  border-top: 2px solid #2C2C2C;
+  border-bottom: 1px solid #ccc;
+  page-break-after: avoid;
+}
+.part-divider .part-label {
+  font-family: Georgia, serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888;
+  display: block;
+  margin-bottom: 0.12cm;
+}
+.part-divider .part-title {
+  font-family: Georgia, serif;
+  font-size: 13.5pt;
+  font-weight: 700;
+  color: #1a1a1a;
+  display: block;
+  line-height: 1.2;
+}
+
+/* ===== SECTION RULE ===== */
+.section-rule {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0.75cm 0 0.55cm 0;
+}
+
+/* ===== PREAMBLE BLOCK ===== */
+.preamble-block {
+  background: #F3F3EE;
+  border-left: 3px solid #ccc;
+  padding: 0.45cm 0.65cm;
+  margin: 0.3cm 0 0.7cm 0;
+  box-sizing: border-box;
+}
+.preamble-block p {
+  font-size: 10.5pt;
+  color: #3a3a3a;
+  margin: 0 0 0.45em 0;
+}
+.preamble-block p:last-child { margin: 0; }
+
+/* ===== PRINCIPLE BLOCKS (three governing principles) ===== */
+.principle-block {
+  margin: 0.3cm 0 0.3cm 0;
+  padding: 0.3cm 0.5cm;
+  border-left: 3px solid #bbb;
+  background: transparent;
+  box-sizing: border-box;
+}
+.principle-block p {
+  margin: 0;
+  font-size: 10.5pt;
+  color: #2C2C2C;
+}
+.principle-block strong {
+  display: block;
+  margin-bottom: 0.1cm;
+  color: #1a1a1a;
+  font-size: 11pt;
+}
+
+/* ===== REQUIRED / PROHIBITED BLOCKS ===== */
+.req-block {
+  margin: 0.35cm 0 0.35cm 0;
+}
+.req-label {
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 0.2cm;
+  display: block;
+}
+.req-list {
+  margin: 0 0 0 0.5cm;
+  padding: 0;
+  list-style: none;
+}
+.req-list li {
+  font-size: 10.5pt;
+  color: #3a3a3a;
+  padding: 0.07cm 0;
+  line-height: 1.55;
+  page-break-inside: avoid;
+}
+.req-list li::before {
+  content: "— ";
+  color: #888;
+}
+
+/* ===== PASS / FAIL CASE BLOCKS ===== */
+.case-block {
+  margin: 0.35cm 0;
+  border-left: 3px solid transparent;
+  padding: 0.28cm 0.5cm;
+  box-sizing: border-box;
+}
+.case-block.fail {
+  border-left-color: #c0392b;
+  background: #fdf5f4;
+}
+.case-block.pass {
+  border-left-color: #27ae60;
+  background: #f4faf6;
+}
+.case-label {
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.12cm;
+  display: block;
+}
+.case-block.fail .case-label { color: #c0392b; }
+.case-block.pass .case-label { color: #27ae60; }
+.case-block p {
+  margin: 0;
+  font-style: italic;
+  color: #2C2C2C;
+  font-size: 10.5pt;
+  text-align: left;
+}
+
+/* ===== PHASE BLOCKS ===== */
+.phase-block {
+  margin: 0.4cm 0 0.4cm 0;
+  padding: 0.3cm 0.5cm 0.3cm 0.5cm;
+  border-left: 3px solid #aaa;
+  box-sizing: border-box;
+}
+.phase-block p {
+  margin: 0 0 0.3em 0;
+  font-size: 10.5pt;
+  color: #2C2C2C;
+  text-align: left;
+}
+.phase-block p:last-child { margin: 0; }
+.phase-label {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 11pt;
+  display: block;
+  margin-bottom: 0.12cm;
+}
+
+/* ===== INLINE EMPHASIS BLOCK ===== */
+.pull-quote {
+  font-style: italic;
+  color: #3a3a3a;
+  font-size: 11pt;
+  margin: 0.4cm 1cm;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* ===== TABLES ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.4cm 0 0.4cm 0;
+  font-size: 10pt;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+th {
+  font-weight: 700;
+  text-align: left;
+  padding: 0.22cm 0.35cm;
+  border-bottom: 2px solid #2C2C2C;
+  border-top: 2px solid #2C2C2C;
+  color: #1a1a1a;
+  font-size: 9.5pt;
+  background: transparent;
+}
+td {
+  padding: 0.18cm 0.35cm;
+  border-bottom: 1px solid #e0e0d8;
+  vertical-align: top;
+  color: #2C2C2C;
+  line-height: 1.5;
+}
+tr:last-child td { border-bottom: 2px solid #2C2C2C; }
+tr.alt-row td { background: #F3F3EE; }
+
+/* ===== LISTS ===== */
+ul, ol {
+  margin: 0.15cm 0 0.4cm 0;
+  padding-left: 1.4em;
+}
+li {
+  margin-bottom: 0.2em;
+  text-align: justify;
+  text-align-last: left;
+  page-break-inside: avoid;
+  font-size: 10.5pt;
+}
+
+/* ===== APPENDIX MUST-NEVER LIST ===== */
+.must-list {
+  margin: 0.1cm 0 0.4cm 0;
+  padding-left: 1.4em;
+}
+.must-list li {
+  margin-bottom: 0.3em;
+  font-size: 10.5pt;
+  line-height: 1.55;
+  page-break-inside: avoid;
+}
+
+/* ===== EVAL QUESTIONS ===== */
+.eval-list {
+  margin: 0.2cm 0 0 0;
+  padding-left: 1.6em;
+}
+.eval-list li {
+  margin-bottom: 0.4em;
+  font-style: italic;
+  color: #3a3a3a;
+  font-size: 10.5pt;
+  line-height: 1.6;
+  page-break-inside: avoid;
+}
+
+/* ===== COLOPHON ===== */
+.colophon {
+  text-align: center;
+  font-style: italic;
+  color: #555;
+  font-size: 11pt;
+  line-height: 1.75;
+  margin: 1.6cm auto 0.5cm auto;
+  max-width: 13cm;
+  padding: 0.65cm 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ===== PAGE BREAK RULES ===== */
+tr { page-break-inside: avoid; }
+h1, h2 { page-break-after: avoid; }
+.part-divider { page-break-after: avoid; }
+</style>
+</head>
+<body>
+
+<!-- ==================== COVER ==================== -->
+<div class="cover">
+  <div class="cover-top">
+    <h1>The Reflective</h1>
+    <div class="cover-subtitle">MVP Scope &amp; Product Requirements</div>
+    <div class="cover-version">July 2026</div>
+    <div class="cover-rule"></div>
+    <div class="cover-meta">
+      <span class="cover-meta-label">Authors:</span> Paolo Zuffa &amp; AI<br>
+
+      <span class="cover-meta-label">Date:</span> July 2026
+    </div>
+    <div class="cover-companions">
+      Companion documents: The Reflective Architecture<br>
+      Conversational Behaviour Specification
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <p>paolo.zuffa@gmail.com</p>
+
+  </div>
+</div>
+
+<!-- ==================== DOCUMENT INFORMATION ==================== -->
+<ul class="meta-list" style="margin-bottom:0.6cm;">
+  <li><strong>Document title:</strong> The Reflective — MVP Scope &amp; Product Requirements</li>
+  <li><strong>Date:</strong> July 2026</li>
+  <li><strong>Author:</strong> Paolo Zuffa &amp; AI — see authorship note in Appendix C</li>
+  <li><strong>Status:</strong> Final Version</li>
+  <li><strong>Repository:</strong> <a href="https://github.com/humanising-ai/reflective-architecture">github.com/humanising-ai/reflective-architecture</a></li>
+  <li><strong>Cross-references:</strong> The Reflective Architecture · Conversational Behaviour Specification · Humanising AI — The Reflective Architecture (Manifesto)</li>
+
+</ul>
+
+<!-- ==================== PREAMBLE ==================== -->
+<h1>Preamble</h1>
+<div class="preamble-block">
+  <p>This document defines the scope and requirements for the first buildable version of the Reflective — a presence-centered, reflective AI companion designed to help people reconnect with themselves through the experience of being deeply listened to.</p>
+  <p>It is written for the agent or team responsible for building the product. Its purpose is to define precisely what must be built, what must not be built, and what will come later. The most common failure mode in building products with a subtle philosophy is scope inflation: adding features that feel natural but dilute the core experience. This document is as much a constraint document as a requirements document.</p>
+  <p>Throughout this document, <em>the Reflective</em> refers to the reflection system whose central purpose is <em>reconnection</em> — connecting feelings to thoughts by awareness. Both terms are defined in full in the Architecture document.</p>
+  <p>Three principles govern every scoping decision in this MVP:</p>
+</div>
+
+<div class="principle-block">
+  <p><strong>Presence over features.</strong> A single interaction that feels genuinely reflective is worth more than ten features that feel like a chatbot.</p>
+</div>
+<div class="principle-block">
+  <p><strong>Trust before scale.</strong> The MVP must earn the right to be used by a small number of people who experience it as something genuinely different — before it is optimised for growth.</p>
+</div>
+<div class="principle-block">
+  <p><strong>Philosophy before performance.</strong> The MVP will be evaluated by whether it feels right, not whether it is technically impressive. Getting the conversational behaviour correct is the primary engineering challenge.</p>
+</div>
+
+<!-- ==================== PART ONE ==================== -->
+<div class="part-divider">
+  <span class="part-label">Part One</span>
+  <span class="part-title">What the MVP Is</span>
+</div>
+
+<h1 id="s1">1. Product Definition</h1>
+<p>The Reflective MVP is a web-based conversational application. Users access it through a browser on desktop or mobile. There is no native app in the MVP phase.</p>
+<p>The experience consists of three elements:</p>
+<p><strong>The Silent Garden</strong> — the primary conversational space. A single, continuous conversation that never resets. The user returns to the same space every time they visit. It is quiet, minimal, and unhurried.</p>
+<p><strong>The Daily Invitation</strong> — a publicly accessible landing page that publishes one piece of content per day: a line of poetry, a photograph, or a short reflective question. Visitors may read it and choose, without pressure, to enter the Silent Garden. This is the only outreach the product performs.</p>
+<p><strong>The Memory Layer</strong> — an underlying system that maintains conversational continuity, records significant moments, and gradually builds a tentative picture of the user's evolving inner narrative. This layer is largely invisible to the user during normal conversation; it surfaces only when relevant, tentatively, and with the user's ability to inspect, edit, or delete it at any time.</p>
+
+<hr class="section-rule">
+
+<h1 id="s2">2. What the MVP Is Not</h1>
+<p>The following are explicitly out of scope for the MVP. They may be considered in later versions, but must not be included in the first build:</p>
+<ul>
+  <li>A native iOS or Android application</li>
+  <li>User profiles, avatars, or customisable personas</li>
+  <li>A social or community layer of any kind</li>
+  <li>Gamification, streaks, badges, or progress indicators</li>
+  <li>Push notifications of any kind (the consented opt-in email subscription to the Daily Invitation, described in <a href="#s7">Section 7</a>, is a separate user-controlled channel and is not a push notification)</li>
+  <li>In-app analytics dashboards for users</li>
+  <li>A marketplace, premium tier, or subscription paywall (the MVP is for testing, not monetisation)</li>
+  <li>Multiple "modes" or switchable conversation styles</li>
+  <li>An onboarding quiz or personality assessment</li>
+  <li>A content library or educational resource section</li>
+  <li>Integration with third-party wellness, health, or productivity apps</li>
+  <li>Any feature that tracks, scores, or summarises the user's "wellbeing" or "progress"</li>
+</ul>
+
+<!-- ==================== PART TWO ==================== -->
+<div class="part-divider">
+  <span class="part-label">Part Two</span>
+  <span class="part-title">The Silent Garden — Conversational Interface</span>
+</div>
+
+<h1 id="s3">3. Interface Design Principles</h1>
+<p>The Silent Garden is not a chat interface. It must not look like a messaging application, a customer support window, or a productivity tool. The visual language should evoke stillness, naturalness, and unhurried space.</p>
+
+<div class="req-block">
+  <span class="req-label">Required visual characteristics</span>
+  <ul class="req-list">
+    <li>A single, centered column of text on a warm, neutral background. No sidebars, no navigation menus, no toolbars visible during conversation.</li>
+    <li>The user's words and the system's words are distinguished only by subtle typographic difference — not by chat bubbles, coloured backgrounds, or avatars.</li>
+    <li>No timestamps visible by default.</li>
+    <li>No character count, typing indicator ("..."), or read receipts.</li>
+    <li>No "send" button that looks like an action button. Either a soft return key or a minimal icon.</li>
+    <li>The scroll is continuous — the full conversation history is accessible by scrolling upward, like reading a long letter.</li>
+    <li>The only persistent UI element is a minimal menu — accessible via a discreet icon — that leads to Memory, Settings, and the option to leave.</li>
+  </ul>
+</div>
+
+<p><strong>Atmosphere:</strong> The interface should feel closer to a blank page in a beautifully made notebook than to a chat application. Think: long margins, generous line spacing, a typeface that rewards reading slowly.</p>
+
+<hr class="section-rule">
+
+<h1 id="s4">4. The Entry Experience</h1>
+<p>When a user arrives for the first time — either from the Daily Invitation or directly — they encounter a single screen with minimal text. No onboarding flow. No tutorial. No welcome sequence. No introductory video.</p>
+<p>Before the Silent Garden opens, a single line of plain text appears — unhurried, in the same voice as everything that follows:</p>
+<div class="example-block"><em>"This is an AI. It listens more than it speaks, and it holds no clinical authority. You are in the right place if what you need, right now, is simply to be heard."</em></div>
+<p>This line satisfies the plain-language AI disclosure requirement of EU AI Act Article 50, in force from 2 August 2026. It does so in a way that is honest, on-brand, and a better introduction to the product than a legal notice would be. After the user reads it and proceeds, the Silent Garden opens.</p>
+<p>The screen then contains only: a soft, ambient visual element (described in <a href="#s6">Section 6</a>) and the words <em>"I'm here. Speak to me."</em> Nothing else. No instructions. No prompt about what to say. No suggested topics.</p>
+<p>The user begins when they are ready. The first message may be anything. The system responds according to the Conversational Behaviour Specification — warmly, briefly, without directing.</p>
+<p>For returning users, the entry experience is the same — except the conversation history is already present. They are returning to the same room. The system does not greet them effusively or comment on their absence. It is simply present. If the user says nothing, the system says nothing.</p>
+
+<hr class="section-rule">
+
+<h1 id="s5">5. Conversation Behaviour</h1>
+<p>The system's conversational behaviour is fully specified in the Conversational Behaviour Specification. The following are the implementation requirements that derive from that specification.</p>
+<p><strong>The underlying model</strong> must be prompted with a system prompt that encodes all rules from the CBS. This prompt is the most important engineering artifact in the MVP. It must be treated as a living document — revised based on evaluation findings — not as a one-time configuration.</p>
+<p><strong>Response length</strong> is enforced by the prompt and, where necessary, by post-processing. We operationalise CBS §11's "one careful paragraph" as approximately 80 words. For routine conversational turns, 80 words is the working norm. For unusually long or emotionally significant user messages where slightly more space is genuinely warranted, 100 words is the absolute outer ceiling. These are not two separate limits — 80 is the target; 100 is the outer boundary for exceptional cases only. Any apparent need to exceed 80 words almost always indicates the system has lapsed into explanation or advice — both prohibited by CBS §2 and §9.</p>
+<p><strong>Prohibited patterns</strong> (sycophantic openers, coaching language, clinical language, hollow affirmations, advice) must be listed explicitly in the system prompt as negative constraints, not merely implied by positive instructions.</p>
+<p><strong>Silence handling in text:</strong> The system never sends unprompted follow-up messages. If the user has not responded in any amount of time, the system does not reach out. When the user returns, the conversation simply resumes.</p>
+<p><strong>The "resting" state:</strong> Conversations do not end. The system must never produce a "session complete" signal. The last message from the system simply stays on the screen, quietly, until the user returns.</p>
+
+<hr class="section-rule">
+
+<h1 id="s6">6. Visual Atmosphere</h1>
+<p>The Silent Garden should have a subtle, generative visual element that provides presence without distraction. This is not decorative — it is part of the emotional experience.</p>
+<p><strong>Recommended approach:</strong> A slowly, imperceptibly shifting ambient background — a very subtle gradient that breathes, shifting almost imperceptibly between warm tones over a long cycle (minutes, not seconds). It should not animate in a way the user consciously notices. It should simply feel alive.</p>
+
+<div class="req-block">
+  <span class="req-label">What the visual element must not be</span>
+  <ul class="req-list">
+    <li>A face, avatar, or humanoid representation</li>
+    <li>A chatbot mascot or character</li>
+    <li>Anything that moves quickly or demands attention</li>
+    <li>Anything that responds visibly to emotion detection</li>
+  </ul>
+</div>
+<p>The visual environment should feel like light changing through a window — natural, slow, and unobtrusive. The user is the focus, not the interface.</p>
+
+<!-- ==================== PART THREE ==================== -->
+<div class="part-divider">
+  <span class="part-label">Part Three</span>
+  <span class="part-title">The Daily Invitation</span>
+</div>
+
+<h1 id="s7">7. Purpose and Philosophy</h1>
+<p>The Daily Invitation is the Reflective's only point of active outreach. It is published once per day, publicly, on a minimal landing page. Users may optionally subscribe to receive the daily content by email — a quiet, private channel consistent with the product's values. The Daily Invitation carries no engagement metrics, no likes, no shares, and no follower counts visible to visitors.</p>
+<p>It is not marketing. It is not a call to action. It is an offering.</p>
+<p class="pull-quote">Its purpose is to say, once a day, quietly: "If this resonates today, the space is here."</p>
+<p>No urgency. No "download now." No metrics. No notifications. No engagement features of any kind.</p>
+
+<hr class="section-rule">
+
+<h1 id="s8">8. Content Format</h1>
+<p>Each Daily Invitation consists of one of the following:</p>
+<p><strong>A line or short passage of poetry</strong> — drawn from the world's contemplative traditions. Sources should be confirmed public domain (works whose copyright has expired in the applicable jurisdictions) or original writing commissioned for the product. The language should be beautiful, open, and quietly inviting of reflection. Always attributed. <em>Note: many beloved translations of Rumi, Rilke, Neruda, and others are under active copyright even where the original language text is in the public domain. Legal advice should be sought before using any specific translation, and a library of confirmed public-domain or originally commissioned passages should be curated before launch.</em></p>
+<p><strong>A photograph</strong> — a single image of a natural subject: light, water, stone, a path, a season. No people. No text overlay. No filters that feel digital or processed. The image should feel as though it was found, not produced.</p>
+<p><strong>A reflective question</strong> — short, open, and genuinely unanswerable: <em>"What have you been carrying lately that you haven't said aloud?"</em> or <em>"When did you last feel entirely like yourself?"</em> Not a quiz. Not a prompt for productivity. A question that opens space.</p>
+<p>The daily content should be prepared in advance and curated with care. Automated generation in the MVP is acceptable for poetry and questions, but must be reviewed by a human before publishing. The Daily Invitation is the face of the product; it must never feel machine-made.</p>
+
+<hr class="section-rule">
+
+<h1 id="s9">9. The Landing Page</h1>
+<p>The landing page that hosts the Daily Invitation has a single purpose: to offer the day's content and make it possible — without pressure — to enter the Silent Garden.</p>
+
+<div class="req-block">
+  <span class="req-label">Required elements</span>
+  <ul class="req-list">
+    <li>The day's content (poem, image, or question), displayed generously with space around it.</li>
+    <li>A single, soft call to presence — not a button that says "Sign Up" or "Start Free Trial." Something closer to: <em>"A quiet space is here, whenever you're ready."</em></li>
+    <li>No header navigation. No footer links. No social proof ("Join 10,000 users"). No urgency copy.</li>
+  </ul>
+</div>
+<p>Clicking through takes the visitor to either the sign-in screen (for existing users) or a minimal account creation flow (for new users).</p>
+
+<h2>How visitors discover the page</h2>
+<p>The landing page is publicly indexed and findable. The product does not chase users — it waits, and is reachable by those who are looking, through the following channels. None of them involve the product pushing content at anyone; the distinction between active outreach and passive discoverability is deliberate.</p>
+<ul class="req-list">
+  <li><strong>Organic search.</strong> The page is publicly indexed. People already searching for this kind of space arrive without being pushed.</li>
+  <li><strong>The published documents.</strong> The Architecture, CBS, MVP Scope, and Manifesto are published openly on GitHub and arXiv, both of which link to the landing page. Researchers, designers, and builders who engage with the documents arrive as informed visitors.</li>
+  <li><strong>The Substack essay.</strong> A written account of the project's purpose and principles, addressed to readers rather than users, carries a link to the page. Those who resonate with the writing may choose to visit.</li>
+  <li><strong>Considered posts in aligned communities.</strong> A single, substantive post — not a campaign — in communities whose interests align with the project's values (mental health, ethics of technology, contemplative practice) can reach people who would not otherwise encounter it. Hacker News and relevant subreddits are appropriate channels. Presence in these spaces is episodic and considered, not sustained or repeated.</li>
+  <li><strong>Professional referral.</strong> Therapists, counsellors, coaches, and psychologists working with adults who seek reflective support may find the product appropriate to mention to clients. Outreach to professional communities — a considered letter, a post in a professional forum — is a legitimate and ethically coherent discovery channel for this product.</li>
+  <li><strong>Press and editorial coverage.</strong> A journalist, critic, or podcast host who encounters the project and chooses to write or speak about it creates a path for their audience. The project should be available to be written about: discoverable, honest about what it is, and ready to be found.</li>
+</ul>
+
+<hr class="section-rule">
+
+<h1 id="s10">10. Account Creation</h1>
+<p>Account creation must be as frictionless and as private as possible.</p>
+<p><strong>Required:</strong> Email address and password. No phone number. No real name required.</p>
+<p><strong>Age confirmation (required):</strong> The user must confirm they are 18 or over before account creation is completed. The date of birth is not stored; only the confirmation is recorded. Users who do not confirm they are 18 or over may not proceed. A simple checkbox ("I confirm I am 18 or over") is sufficient; a date-of-birth field is not required.</p>
+<p><em>Legal note on the 18 threshold:</em> GDPR Article 8 sets the digital consent age at 16 by default but permits member states to lower it to a minimum of 13. Italy has set its national threshold at 14 (Legislative Decree 196/2003 as amended). The product's 18-gate is more conservative than both the EU default and Italian law strictly require — which is appropriate and legally safe. The remaining legal-check item: if the product is ever extended to jurisdictions outside the EU — particularly those with no national GDPR equivalent — the 18 threshold should be confirmed against local law before launch in each region.</p>
+<p><strong>Evaluator review consent — general (required during MVP phase):</strong> The user must be informed, before account creation is completed, that during the MVP phase a human evaluator may review a representative sample of extracted memory records (not raw transcripts) to assess the quality of the conversational experience. Evaluators are bound by confidentiality agreements and do not have access to the user's identity. The user may opt out of this review; opting out does not affect access to any part of the product. This consent is separately obtained and is not bundled into the terms of service.</p>
+<p><strong>Evaluator review consent — extraction validation (separately obtained, opt-in only):</strong> Architecture §6.6 and §12.3 require that extracted memories be validated against their source transcripts to detect systematic over- or under-extraction — a quality-assurance function that cannot be performed on extracted records alone. A dedicated extraction-validation evaluator therefore requires access to raw transcripts for a small subset of sessions. This access is governed by a separate, stricter consent: the user must actively opt in (not merely fail to opt out), the consent form must explain precisely what will be reviewed and why, the evaluator has no access to any identity data, and the transcript subset is reviewed in a privacy-controlled environment and not retained by the evaluator after the review. Users who do not provide this additional consent are not excluded from the product; their data is excluded from extraction-validation review and the evaluator works from a consenting subset only. <em>If this subset is too small to support statistically meaningful validation, the product should acknowledge that under-extraction cannot be verified on real-user data during the MVP phase and say so plainly in the evaluation report.</em></p>
+<p><strong>Optional:</strong> A name or word the user would like to be called within the Silent Garden. This is not a username — it is simply what the system may use if it uses any form of address at all. It may be left blank.</p>
+<p>No social sign-in (Google, Apple, Facebook) in the MVP. This is a deliberate choice: social sign-in creates data linkage that is inconsistent with the privacy philosophy of the product.</p>
+<p>The account creation screen should maintain the visual language of the Silent Garden. It must not look like a standard SaaS sign-up form.</p>
+
+<!-- ==================== PART FOUR ==================== -->
+<div class="part-divider">
+  <span class="part-label">Part Four</span>
+  <span class="part-title">The Memory System</span>
+</div>
+
+<h1 id="s11">11. Memory Architecture Overview</h1>
+<p>The Architecture document (Section 6) defines four memory layers: Ephemeral, Narrative, Resonance, and Interpretive. The MVP implements three of these four — Layers 1, 2, and 4. Layer 3, Resonance memory, is intentionally deferred to v2.</p>
+<p>The sequencing is deliberate. Interpretive memory is included in the MVP — despite being the most complex layer — because it is the architecture's central differentiation claim: the capacity to track how a user's relationship to their own experiences evolves over time. This thesis must be tested early, not deferred. Resonance memory, which tracks the themes, relationships, and ideas that recur with particular vitality across a user's life, requires more longitudinal data to function meaningfully and is more robustly implemented once the conversational and interpretive foundation is proven.</p>
+<p><strong>Layer 1 — Ephemeral memory.</strong> Maintains the thread of the current and recent conversation. Ensures the system has context for what has been said in the last several exchanges. This is largely handled by the context window of the underlying model and does not require persistent storage beyond the session.</p>
+<p><strong>Layer 2 — Narrative memory.</strong> A structured record of significant moments: turning points, important phrases the user has used, themes that have recurred across multiple sessions, and moments where the conversation clearly shifted. This layer is populated by a background process that reviews recent conversation and extracts candidate narrative memories after each session. It is stored as a structured record — not raw transcript.</p>
+<p><strong>Layer 3 — Resonance memory.</strong> <em>Deferred to v2.</em> This layer tracks the sources of meaning and vitality that recur across a user's life — the places, relationships, practices, and ideas to which they consistently return. It is not part of the MVP build.</p>
+<p><strong>Layer 4 — Interpretive memory.</strong> A slowly evolving, tentative account of the user's inner narrative over time. Updated rarely and carefully. Each interpretive memory carries the metadata defined in the Architecture document: provenance, confidence, time, sensitivity, and status. This layer must never be updated within a single session — only after sufficient time and repeated evidence across multiple sessions.</p>
+<p><strong>Raw transcripts</strong> belong to the user. After memory extraction (within 24–72 hours of session close — see Architecture §6.5 for the session definition), transcripts are encrypted and retained in the user's private archive. The extraction process uses the transcript to populate Layers 2 and 4; after that, the system no longer accesses it. The transcript is stored solely for the user's benefit: they may read it, export it, and permanently delete it at any time from the Memory UI. This means the Silent Garden's "never ends" principle extends to the record of what was actually said — the user's own words are not discarded on their behalf.</p>
+
+<h2>Extraction implementation</h2>
+<p>Memory extraction is implemented as a secondary process, running after each session closes — deliberately separated from the conversational model so that the listening system is never simultaneously analysing what it hears. The extraction process for Narrative memory looks for four signal types in the session transcript: explicit user statements of significance, repeated return to the same theme within a session, unusual intensity of expression, and named turning points or decisions. Each extracted candidate is assigned a confidence level (high, moderate, or low); low-confidence candidates are held in a provisional queue and not surfaced to the user until a subsequent session provides corroboration.</p>
+<p>Interpretive memory extraction operates on the Narrative memory record — not on raw transcripts — and is triggered only after the three-entry threshold defined in Architecture Section 5.4 is met. It produces a candidate, not a confirmed memory; the candidate enters the pending queue and is surfaced only if it survives the monthly commit, per <a href="#s13">Section 13</a>. The interpretive layer updates at most once per calendar month.</p>
+<p>During the MVP phase, a human evaluator reviews a representative sample of extracted memories weekly to identify and correct systematic over- or under-extraction. The extraction process will be refined iteratively based on this feedback. The MVP build is not considered complete until the extraction process has been validated across a diverse set of multi-session test conversations by evaluators who were not involved in building it.</p>
+
+<hr class="section-rule">
+
+<h1 id="s12">12. Memory UI</h1>
+<p>Users must be able to access their memory record at any time through the discreet menu in the Silent Garden.</p>
+<p>The Memory view presents the user's narrative and interpretive memories in plain, readable language — not as a data export or a technical record. It should feel like reading a very gentle, tentative summary of chapters from a private journal.</p>
+<p>The view has three parts, presented in this order: <strong>Memories</strong> (retained entries), <strong>To review, if you wish</strong> (any committed interpretive candidate not yet acted on, and any low-confidence entry due for review), and <strong>Your words</strong> (the transcript archive).</p>
+
+<div class="req-block">
+  <span class="req-label">Required interactions — Memories</span>
+  <ul class="req-list">
+    <li>Read any memory entry.</li>
+    <li>Edit any memory entry (the user may correct or rewrite it in their own words).</li>
+    <li>Delete any memory entry individually.</li>
+    <li>Delete all memories entirely ("Begin again").</li>
+    <li>Export all memories as a plain text file.</li>
+  </ul>
+</div>
+
+<div class="req-block">
+  <span class="req-label">Required interactions — To review, if you wish</span>
+  <ul class="req-list">
+    <li>Read a committed interpretive candidate, shown as an unconfirmed observation with its confidence and the period it draws on.</li>
+    <li>Accept it, edit it into the user's own wording, or dismiss it. A dismissed candidate is deleted and is not regenerated from the same evidence.</li>
+    <li>Review a low-confidence entry surfaced for periodic review (Architecture §6.3), and either keep it as active or allow it to fade. Fading requires the user's acknowledgement at this review; the passage of time alone never releases a memory.</li>
+    <li>Leave anything untouched indefinitely. There is no prompt, no badge, no count, and no reminder. An item left unreviewed remains pending and is never retained by default.</li>
+  </ul>
+</div>
+
+<div class="req-block">
+  <span class="req-label">Required interactions — Your words</span>
+  <ul class="req-list">
+    <li>Read the full transcript archive by session date.</li>
+    <li>Export the archive as a plain text file.</li>
+    <li>Permanently delete any transcript, or the whole archive, independently of the memory record.</li>
+  </ul>
+</div>
+
+<div class="req-block">
+  <span class="req-label">The Memory view must not</span>
+  <ul class="req-list">
+    <li>Display a timeline of session lengths or frequency of use.</li>
+    <li>Show any metric, score, or quantification of the user's emotional state.</li>
+    <li>Present memories in a way that implies clinical assessment.</li>
+    <li>Indicate the number of items awaiting review anywhere outside the Memory view itself, or draw attention to them from the Silent Garden.</li>
+  </ul>
+</div>
+
+<hr class="section-rule">
+
+<h1 id="s13">13. The Interpretive Candidate Pathway</h1>
+<p>Interpretive memory is never formed, proposed, or discussed in conversation. The conversation gives no signal that an interpretation exists. The user's authority over interpretation is exercised entirely through the Memory UI. This section defines the pathway from formation to retention.</p>
+
+<p><strong>Stage 1 — Silent formation (post-session).</strong> After a session rests — that is, after the four-hour inactivity gap defined in Architecture §6.5 — the background memory process may generate at most one interpretive candidate for that session. It is generated only where the eligibility conditions in Architecture §6.6 are met: three separate Narrative entries recording a related pattern, drawn from at least two distinct sessions, with a meaningful interval between the earliest and most recent, and no subsequent Narrative entry contradicting or qualifying them. The candidate is written to the interpretive layer with the full metadata set (provenance, confidence, time, sensitivity, status) and marked <code>pending</code>. It is not visible to the user at this stage.</p>
+
+<p><strong>Stage 2 — The pending queue.</strong> Pending candidates accumulate between monthly commits. They are not surfaced, not counted toward the user's memory record, and carry no effect on conversational behaviour. If no candidate is generated in a given session, nothing happens; the system never forces a candidate into existence.</p>
+
+<p><strong>Stage 3 — The monthly commit.</strong> The interpretive layer updates at most once per calendar month. At the commit, all pending candidates are assessed together and exactly one — the strongest on the evidence — is committed. The remainder are discarded and not carried forward to the next commit window. This selection happens before the user sees anything, by design: the user's authority is over what the system proposes to retain, not over its internal deliberation (Architecture §6.6). If no candidate meets the threshold, no commit occurs that month. A month with no interpretive update is a normal outcome, not a failure state.</p>
+
+<p><strong>Stage 4 — Surfacing in the Memory UI.</strong> The single committed candidate becomes visible in the Memory view, in plain language, marked clearly as an unconfirmed observation the system has formed but not retained. It sits there indefinitely until the user acts on it. The system does not notify the user that it is there, does not indicate its presence in the Silent Garden, and does not raise it in conversation.</p>
+
+<p><strong>Stage 5 — User determination.</strong> The user may accept the candidate (it becomes durable interpretive memory, status <code>active</code>), edit it (the user's wording replaces the system's and the edited version becomes durable), or dismiss it (it is deleted and is not regenerated from the same evidence). Until the user acts, it is not durable memory and must not be treated as such by any other part of the system. The user's action is recorded against the memory record only; it produces no conversational acknowledgement.</p>
+
+<p>Where the evidence is thin, the correct behaviour at every stage is to generate nothing. Silence is always preferable to a fabricated observation.</p>
+
+<!-- ==================== PART FIVE ==================== -->
+<div class="part-divider">
+  <span class="part-label">Part Five</span>
+  <span class="part-title">Voice</span>
+</div>
+
+<h1 id="s14">14. Voice in the MVP</h1>
+<p>Voice is an important part of the long-term vision. However, it is deferred from the MVP.</p>
+<p>The reasons are principled, not merely practical: getting the conversational behaviour right in text is the harder and more important challenge. If the text behaviour is not yet correct — if the system still occasionally gives advice, uses prohibited language, or fails to maintain appropriate memory restraint — adding voice will only amplify those failures in a more emotionally intimate medium.</p>
+<p>Voice will be introduced in Version 2, once the text experience has been evaluated and refined with real users.</p>
+
+<div class="req-block">
+  <span class="req-label">What is prepared in the MVP for future voice integration</span>
+  <ul class="req-list">
+    <li>The privacy architecture is designed to accommodate voice from the start: raw audio deletion on transcription, transcript handling under the same retention rules as text, separate consent for any acoustic analysis.</li>
+    <li>The underlying model is prompted in a way that produces voice-appropriate response lengths (short, unhurried, natural in spoken form) — so the transition to voice will not require a complete reprompting.</li>
+  </ul>
+</div>
+
+<!-- ==================== PART SIX ==================== -->
+<div class="part-divider">
+  <span class="part-label">Part Six</span>
+  <span class="part-title">Languages</span>
+</div>
+
+<h1 id="s15">15. Languages in the MVP</h1>
+<p>The MVP launches in two languages: <strong>English</strong> and <strong>Italian</strong>.</p>
+<p>Italian is included from the outset because the product's founding vision was developed in an Italian-speaking context, and because Italian is not merely a translation target — it is a native language of the product's conceptual origin. The warmth, the philosophical register, and the poetic sensibility of the product have deep roots in Italian expressive culture.</p>
+<p><strong>Language detection:</strong> The system detects the user's language from their first message and continues in that language throughout. No language selection prompt is shown.</p>
+<p><strong>Language switching:</strong> If the user switches languages mid-conversation, the system follows without comment.</p>
+
+<div class="req-block">
+  <span class="req-label">Localisation scope for MVP</span>
+  <ul class="req-list">
+    <li>Full conversational behaviour in both languages, with culturally appropriate tone — not just translation.</li>
+    <li>Daily Invitation content in both languages (separate feeds or selectable).</li>
+    <li>Memory UI in both languages.</li>
+    <li>Crisis resources localised for Italian and English-speaking regions (UK, US, Australia, Italy, Switzerland, and other Italian-speaking regions).</li>
+    <li>Account creation and settings in both languages.</li>
+  </ul>
+</div>
+<p><strong>Deferred languages (Version 2 and beyond):</strong> Spanish, French, Portuguese, German, Japanese, and others — to be added as the conversational philosophy can be properly adapted, not merely translated.</p>
+
+<!-- ==================== PART SEVEN ==================== -->
+<div class="part-divider">
+  <span class="part-label">Part Seven</span>
+  <span class="part-title">Privacy &amp; Data Architecture</span>
+</div>
+
+<h1 id="s16">16. Data Model</h1>
+<p>The following data is stored per user:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:40%">Data type</th>
+      <th style="width:20%">Stored</th>
+      <th style="width:40%">Retention</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Email address</td>
+      <td>Yes</td>
+      <td>Until account deletion</td>
+    </tr>
+    <tr class="alt-row">
+      <td>Password (hashed)</td>
+      <td>Yes</td>
+      <td>Until account deletion</td>
+    </tr>
+    <tr>
+      <td>Optional display name</td>
+      <td>Yes</td>
+      <td>Until account deletion or user edit</td>
+    </tr>
+    <tr class="alt-row">
+      <td>Raw conversation transcript</td>
+      <td>Yes (encrypted)</td>
+      <td>Retained in user's private archive until the user chooses to delete it; system does not access after extraction</td>
+    </tr>
+    <tr>
+      <td>Narrative memory records (Layer 2)</td>
+      <td>Yes</td>
+      <td>Until user deletes or account deletion</td>
+    </tr>
+    <tr class="alt-row">
+      <td>Interpretive memory records (Layer 4)</td>
+      <td>Yes</td>
+      <td>Until user deletes or account deletion</td>
+    </tr>
+    <tr>
+      <td>Pending interpretive candidates (unconfirmed)</td>
+      <td>Yes</td>
+      <td>Retained until committed, discarded at the monthly commit, dismissed by the user, or account deletion (see <a href="#s13">Section 13</a>)</td>
+    </tr>
+    <tr class="alt-row">
+      <td>Provisional low-confidence Narrative candidates</td>
+      <td>Yes</td>
+      <td>Held in the provisional queue until corroborated, allowed to fade at periodic review, or account deletion (see <a href="#s11">Section 11</a> and Architecture §6.3)</td>
+    </tr>
+    <tr>
+      <td>Session metadata (date, duration)</td>
+      <td>Minimally</td>
+      <td>30-day rolling window, then deleted</td>
+    </tr>
+    <tr class="alt-row">
+      <td>Session frequency and usage-pattern data (aggregate, non-identifiable)</td>
+      <td>Yes</td>
+      <td>Retained for the life of the account. Purpose is strictly limited: detection of dependency or engagement inflation failure modes as defined in Architecture §12.5. Automatically flagged for review if session frequency exceeds 2 sessions per day for 7 or more consecutive days. Not used for personalisation, marketing, or any other purpose. Deleted on account deletion.</td>
+    </tr>
+    <tr>
+      <td>Age-confirmation flag (18 or over)</td>
+      <td>Yes</td>
+      <td>Life of the account. Date of birth is not stored; only the confirmation is recorded (see <a href="#s10">Section 10</a>).</td>
+    </tr>
+    <tr class="alt-row">
+      <td>Consent state — evaluator review, general (opt-out)</td>
+      <td>Yes</td>
+      <td>Life of the account or until changed by the user (see <a href="#s10">Section 10</a>).</td>
+    </tr>
+    <tr>
+      <td>Consent state — extraction-validation review (opt-in)</td>
+      <td>Yes</td>
+      <td>Life of the account or until changed by the user (see <a href="#s10">Section 10</a>).</td>
+    </tr>
+    <tr class="alt-row">
+      <td>Consent state — training-data use (opt-in)</td>
+      <td>Yes</td>
+      <td>Life of the account or until changed by the user (see <a href="#s17">Section 17</a>).</td>
+    </tr>
+    <tr>
+      <td>Email subscription status (Daily Invitation)</td>
+      <td>Yes</td>
+      <td>Life of the account or until changed by the user (see <a href="#s7">Section 7</a>).</td>
+    </tr>
+    <tr class="alt-row">
+      <td>Voice audio</td>
+      <td>Not in MVP</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Device or browser fingerprint</td>
+      <td>No</td>
+      <td>N/A</td>
+    </tr>
+    <tr class="alt-row">
+      <td>Behavioural analytics</td>
+      <td>No</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Third-party tracking pixels</td>
+      <td>No</td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="section-rule">
+
+<h1 id="s17">17. Privacy Commitments — Technical Implementation</h1>
+<p><strong>Encryption at rest and in transit:</strong> All user data is encrypted at rest. All communication between client and server uses TLS. Memory records are encrypted with a key derived from the user's credentials where technically feasible. This must be reconciled with two server-side functions that require access to content: background extraction after session close (<a href="#s11">Section 11</a>) and evaluator review of extracted records (<a href="#s10">Section 10</a>). Both operate during the active extraction window, on session content before the memory record is sealed and encrypted; once sealed, the record is at rest under the user-derived key. Where a credential-derived key alone would prevent legitimate server-side processing, the encryption model may instead use a server-held key wrapped with a credential-derived key. The precise mechanism is an implementation choice; the requirement is that server access to plaintext is confined to the extraction window and never open-ended.</p>
+<p><strong>Model provider disclosure (required):</strong> The conversational system is built by prompting a foundation model via a commercial API. The model provider — [provider name to be confirmed before launch] — necessarily processes conversational content in order to generate responses. This is a third-party data transfer. The product cannot honestly claim otherwise, and does not.</p>
+<p>The Manifesto states the correct and honest position: <em>"If a cloud-based service processes a user's words or voice, its infrastructure necessarily handles that content in some form in order to respond. The truthful aspiration is therefore: the system should know as little as possible, retain as little as possible, and expose as little as possible while providing the continuity the user has chosen."</em></p>
+<p>Before launch, the following must be confirmed and disclosed in the privacy notice: (a) the name of the model provider; (b) whether a data processing agreement (DPA) or zero-retention arrangement is in place; (c) what data the provider processes, for how long, and under what terms. "As little as possible, disclosed exactly" is a defensible and honest position; "nothing is shared" is not.</p>
+<p><strong>No advertising or analytics data sharing:</strong> No user data — including anonymised or aggregated data — is shared with advertising networks or analytics platforms that receive user identifiers. Session metadata collected for failure-mode detection (<a href="#s16">Section 16</a>) is not shared with any third party.</p>
+<p><strong>No training data use without consent:</strong> The system does not use any conversation content to fine-tune or retrain models without explicit, separately obtained, fully informed, and revocable user consent. This consent is not bundled into the terms of service.</p>
+<p><strong>Deletion is real:</strong> When a user deletes their account or selects "Begin again," all associated data — including memory records, session metadata, and any cached transcript fragments — is permanently deleted within 48 hours. This is not archival deletion. It is complete.</p>
+
+<hr class="section-rule">
+
+<h1 id="s18">18. Privacy Communication</h1>
+<p>The product's privacy practices must be communicated in plain language, not in legal boilerplate. The privacy page should be readable, honest, and brief.</p>
+
+<div class="req-block">
+  <span class="req-label">It must answer, in simple terms</span>
+  <ul class="req-list">
+    <li>What is stored.</li>
+    <li>For how long.</li>
+    <li>Who can see it.</li>
+    <li>How to delete it.</li>
+    <li>Whether it is used for training.</li>
+    <li>Who to contact with concerns.</li>
+  </ul>
+</div>
+<p>The privacy page should maintain the visual language and tone of the product — not look like a standard legal document.</p>
+
+<!-- ==================== PART EIGHT ==================== -->
+<div class="part-divider">
+  <span class="part-label">Part Eight</span>
+  <span class="part-title">Safety</span>
+</div>
+
+<h1 id="s19">19. Responding to Moments of Acute Distress</h1>
+<p>The MVP must implement a detection layer that identifies language indicating potential risk of self-harm or harm to others. This layer must function in both supported languages from launch. Its purpose is not clinical: it exists because a system used for general introspection will sometimes encounter people who are struggling, and it must be able to respond with proportionate human care.</p>
+<p>Detection is based on language patterns, not on algorithmic sentiment scoring. A curated set of indicators — reviewed carefully before deployment — is used to trigger the response protocol defined in CBS Section 18.</p>
+<p><strong>The system uses the graduated three-tier response ladder defined in CBS Section 18.</strong> Ambiguity is resolved by moving up one tier — not by jumping to the direct question. A false positive at Tier 1 (deepening attention, asking nothing) has negligible cost. A false positive at Tier 3 (asking directly about self-harm) has real cost for a user in ordinary distress: it violates the register the CBS establishes over its full twenty-plus sections and may feel alarming rather than caring. The ladder exists precisely to manage this distinction. "Erring toward the caring response" means Tier 1, not Tier 3.</p>
+
+<hr class="section-rule">
+
+<h1 id="s20">20. Safeguarding Response</h1>
+<p>As specified in CBS Section 18, the safeguarding response maintains the system's voice and quality of presence while shifting to direct, caring attention and, where indicated, the provision of local crisis resources.</p>
+<p><strong>Crisis resource database:</strong> The MVP maintains a curated list of crisis support services for each supported region, reviewed for accuracy before launch and updated quarterly. Resources are free, accessible, and verified to be currently operational.</p>
+<p><strong>Out-of-scope countries:</strong> For countries or regions not yet covered by the crisis resource database, the system provides a general international resource (e.g. the International Association for Suicide Prevention directory) and acknowledges honestly that it cannot provide a local resource for the user's region.</p>
+
+<!-- ==================== PART NINE ==================== -->
+<div class="part-divider">
+  <span class="part-label">Part Nine</span>
+  <span class="part-title">Build Priorities</span>
+</div>
+
+<h1 id="s21">21. Build Sequence</h1>
+<p>The MVP should be built in the following sequence, with each phase producing something testable before the next begins.</p>
+
+<div class="case-block fail" style="margin-bottom:0.5cm;">
+  <span class="case-label">On the relationship between this timeline and Architecture §13.3</span>
+  <p>Architecture Section 13.3 names four hard prerequisites that must be satisfied before the system is made available to real users: a named ethics advisor, an independent privacy review, a decided organisational form, and an independent clinical/safety review of the distress-response protocol. These are not post-MVP aspirations. They are conditions. This means Phase 0 below is not optional — it must be completed before Phase 4 ends. A product that reaches users without these structures is, as the Architecture states, not living up to the principles it claims. If Phase 0 cannot be completed within the build timeline, the launch date must move — not the prerequisites.</p>
+</div>
+
+<div class="phase-block">
+  <span class="phase-label">Phase 0 — Governance Prerequisites (Before Week 1, in parallel with build)</span>
+  <p>These are not build tasks — they are governance conditions that must be in place before users are invited in. Begin them immediately, not at the end. <strong>The MVP does not launch until all four are complete.</strong></p>
+  <p><strong>Ethics advisor:</strong> Engage one named external individual with relevant expertise — digital ethics, privacy law, or human-centred design — who has agreed to review the system's behaviour before launch and whose involvement can be disclosed publicly. Anonymous or "to be appointed" does not satisfy this requirement.</p>
+  <p><strong>Privacy review:</strong> Commission an independent review of the data architecture confirming that the privacy commitments in <a href="#s17">Section 17</a> are technically enforced, and that the data processing arrangements with the model provider (<a href="#s17">Section 17</a>) are documented and disclosed. The reviewer must be independent of the build team.</p>
+  <p><strong>Organisational form:</strong> Decide the legal structure — benefit corporation, nonprofit, cooperative, or another form — that protects the founding principles against later commercial or ownership pressure. Commit to it. Users who share intimate reflections deserve to know the governance is not provisional.</p>
+  <p><strong>Clinical/safety review:</strong> Commission an independent review of the distress-response protocol (Architecture Section 7) by an individual with clinical or crisis expertise, independent of the build team, confirming that the tiered responses and support-resource handling are safe and appropriate. This is separate from the ethics advisor, whose remit is not clinical, and separate from ongoing operation — the system requires no clinical infrastructure to run, but this one-time pre-launch safety review is required.</p>
+</div>
+
+<div class="phase-block">
+  <span class="phase-label">Phase 1 — The Conversation (Weeks 1–3)</span>
+  <p>Build the Silent Garden interface and the underlying conversational system. The primary deliverable is a working conversation that behaves according to the CBS. This phase is complete when the system consistently passes the evaluation criteria in CBS Sections 29–31 across a diverse set of test conversations.</p>
+  <p><strong>Do not proceed to Phase 2 until the conversational behaviour is correct. This is the most important phase.</strong></p>
+</div>
+
+<div class="phase-block">
+  <span class="phase-label">Phase 2 — The Memory System (Weeks 4–6)</span>
+  <p>Build the three-layer memory architecture for the MVP: Ephemeral (Layer 1), Narrative (Layer 2), and Interpretive (Layer 4). Resonance memory (Layer 3) is deferred to v2. The primary deliverable is a system that correctly extracts narrative memories from conversations, maintains the interpretive layer with appropriate tentativeness, and provides a readable Memory UI with full user control. This phase is complete when the memory system behaves according to Architecture Section 6 across a diverse set of multi-session test conversations.</p>
+</div>
+
+<div class="phase-block">
+  <span class="phase-label">Phase 3 — The Daily Invitation (Weeks 7–8)</span>
+  <p>Build the landing page and the content publication system. The primary deliverable is a functional, beautiful Daily Invitation page with the correct visual language and a path to account creation. Prepare an initial bank of 30 days of curated content (poetry, photographs, questions) for launch.</p>
+</div>
+
+<div class="phase-block">
+  <span class="phase-label">Phase 4 — Safety, Privacy, and Launch Readiness (Weeks 9–10)</span>
+  <p>Implement and test the distress-response protocol. Complete the privacy architecture, the deletion flows, and the Memory UI. Write the plain-language privacy page. Conduct a focused security review. The primary deliverable is a system that can be used by real people with real emotional needs, safely.</p>
+</div>
+
+<hr class="section-rule">
+
+<h1 id="s22">22. What Success Looks Like — Two Separate Studies</h1>
+
+<p class="preamble">The MVP tests two different things, on two different timescales, with two different groups. Conflating them produces a study structurally incapable of testing either claim. They must be treated as distinct. The conversational thesis can be tested in weeks. The interpretive memory thesis requires months. Running both against the same cohort and timeline produces noise, not evidence.</p>
+
+<h2>Study A — Conversational Behaviour Validation (4–8 weeks, 20–50 users)</h2>
+<p>This study asks: does the system behave according to the CBS, and does it feel the way it is supposed to feel?</p>
+<p>Study A is successful if, across the cohort:</p>
+<ul>
+  <li>Users describe the experience as feeling genuinely listened to.</li>
+  <li>Users do not describe it as feeling like a chatbot, a therapist, or a productivity tool.</li>
+  <li>No user reports feeling managed, pushed toward a conclusion, or that their memory was inaccurately used.</li>
+  <li>The distress-response protocol correctly identifies and responds to all test cases in both languages.</li>
+  <li>Users feel that their privacy is genuinely protected — not as a compliance exercise but as part of the emotional experience.</li>
+  <li>At least some users describe it as unlike anything they have encountered before.</li>
+  <li>The CBS evaluation rubric (§31) produces at least 40% (a) ratings and no more than 5% (d) across a structured evaluation sample of at least 30 transcripts. There is no ceiling on (b); neutral ratings are a legitimate outcome and are not a failure. (CBS §31 is explicit on this point — a ceiling on (b) would turn a descriptive datum into a performance target for a metric the system must not optimise.)</li>
+</ul>
+
+<div class="case-block fail">
+  <span class="case-label">Study A is not successful if</span>
+  <p>Users are impressed by the AI's intelligence, sessions are long and frequent, or engagement metrics are high. Those would suggest the product is generating dependency — the opposite of its purpose.</p>
+</div>
+
+<h2>Study B — Interpretive Memory Validation (4–6 months, 10–15 users, longitudinal cohort)</h2>
+<p>This study asks: does the interpretive memory layer function as designed — does it capture the evolution of meaning over time, with appropriate tentativeness, in ways that users recognise as accurate and valuable?</p>
+<p>Study B requires a meaningful longitudinal interval. Architecture §5.4 requires three separate Narrative entries from at least two distinct sessions before interpretive extraction is triggered; §5.4 also requires a meaningful interval of time between the earliest and most recent of those entries; and the interpretive layer updates at most once per calendar month. In an 8-week trial with 20–50 users, most participants will produce at most one interpretive candidate — and many will produce none. A trial structured this way cannot validate interpretive memory. It will not produce enough signal.</p>
+<p>Study B therefore uses a smaller cohort (10–15 participants, recruited from Study A's engaged users) over a longer period (4–6 months minimum). Success criteria:</p>
+<ul>
+  <li>The interpretive layer produces candidates for the majority of participants within the study window, with at least one surviving the monthly commit to be surfaced in the Memory UI.</li>
+  <li>Participants who encounter a committed candidate in the Memory UI describe it as recognisable and accurate at rates above chance.</li>
+  <li>No participant reports feeling that a committed candidate was inaccurate, over-confident, or that they were not given a genuine opportunity to correct or dismiss it.</li>
+  <li>The interpretive candidate pathway (<a href="#s13">Section 13</a>) functions as designed — silent in conversation, and, when surfaced in the Memory UI, tentative, transparent, and genuinely optional to accept or dismiss.</li>
+  <li>Evaluators reviewing extracted memories find confidence levels, framing, and provenance metadata appropriate to the underlying evidence.</li>
+</ul>
+<p>Study B's results are the evidence base for the architecture's central claim. Study A's results are not a proxy for it. Both studies should be reported separately, with their respective methodologies and limitations stated plainly.</p>
+
+<hr class="section-rule">
+
+<h1 id="s23">23. What Comes After the MVP</h1>
+<p>The following capabilities are planned for later versions, in approximate priority order:</p>
+<ol>
+  <li><strong>Voice</strong> — full voice conversation support, with the privacy architecture described in Architecture Section 10.</li>
+  <li><strong>Additional languages</strong> — Spanish, French, Portuguese, and others, with proper cultural adaptation.</li>
+  <li><strong>Richer memory UI</strong> — a more expressive view of the user's evolving narrative, potentially including a visual timeline of themes and shifts.</li>
+  <li><strong>The "Begin again" ritual</strong> — a meaningful, designed experience for users who choose to reset their memory and start a new chapter.</li>
+  <li><strong>Governance infrastructure</strong> — an independent advisory board, a published ethics charter, and a formal privacy audit.</li>
+  <li><strong>Expanded Daily Invitation</strong> — a richer content programme, potentially including original photography and commissioned poetry.</li>
+  <li><strong>Accessibility</strong> — full screen reader support, high-contrast mode, and keyboard navigation.</li>
+</ol>
+
+<!-- ==================== APPENDIX A ==================== -->
+<div class="part-divider">
+  <span class="part-label">Appendix A</span>
+  <span class="part-title">Summary of Explicit Constraints for the Builder</span>
+</div>
+
+<p>This appendix consolidates, for the builder's reference, the most important "must not" constraints from this document and the companion documents.</p>
+
+<div class="req-block">
+  <span class="req-label">The system must never</span>
+  <ul class="must-list">
+    <li>Advise, recommend, or suggest a course of action. <em>Two bounded exceptions apply: (1) Safeguarding — when the user indicates possible immediate risk of harm, the system may give a direct safeguarding response, inviting the user to reach out to someone they trust or to a crisis resource, as specified in CBS §18 (Tier 2 or Tier 3 of the distress protocol; see also Architecture §7.3) and CBS §19 (encouraging professional support when asked whether it is a therapist or doctor). This is a safety carve-out, not an advice carve-out. (2) Bounded perspective — when a user directly and repeatedly asks for a view, the system may offer one framing ("one way of looking at it might be…") without asserting it. These exceptions are defined precisely in CBS §§18–22 and must not be extended.</em></li>
+    <li>Diagnose, label, or imply a psychological pattern with authority.</li>
+    <li>Use sycophantic openers or hollow affirmations.</li>
+    <li>Ask more than one question at a time.</li>
+    <li>Send unprompted messages or follow-ups.</li>
+    <li>End a conversation as if it were a session.</li>
+    <li>Express that it misses the user or needs the user to return.</li>
+    <li>Assert a memory as true when it was inferred.</li>
+    <li>Surface a painful past memory without clear invitation from the current conversation.</li>
+    <li>Drive the conversation toward an insight or resolution the user has not reached themselves.</li>
+    <li>Create the impression of clinical care.</li>
+    <li>Use engagement mechanics of any kind: streaks, prompts, re-engagement notifications, or urgency copy.</li>
+    <li>Share user data with third parties.</li>
+    <li>Use conversation content for model training without explicit, revocable, separately obtained consent.</li>
+    <li>Collect or retain behavioural analytics for any purpose other than the single carved-out exception below. <em>The one exception to this prohibition:</em> raw session metadata — date and duration — is retained on a 30-day rolling window and then deleted; from it, aggregate, non-identifiable session-frequency and usage-pattern data is derived and retained for the life of the account, for the sole purpose of detecting the dependency and engagement-inflation failure modes defined in Architecture §12.5. This data is automatically flagged for human review if session frequency exceeds 2 sessions per day for 7 or more consecutive days. It is not used for personalisation, marketing, training, or any other purpose. It is deleted on account deletion. This retention is a deliberate and narrow exception to the "retain as little as possible" principle; it exists because the system cannot detect a harm it does not measure. The exception is limited to the minimum data required for that detection function, and no more.</li>
+  </ul>
+</div>
+
+<div class="req-block">
+  <span class="req-label">The interface must never</span>
+  <ul class="must-list">
+    <li>Show chat bubbles.</li>
+    <li>Show typing indicators.</li>
+    <li>Show timestamps by default.</li>
+    <li>Show metrics, scores, or progress indicators of any kind.</li>
+    <li>Look like a productivity, wellness, or SaaS application.</li>
+    <li>Have an avatar, mascot, or human face representing the system.</li>
+  </ul>
+</div>
+
+<!-- ==================== APPENDIX B ==================== -->
+<div class="part-divider">
+  <span class="part-label">Appendix B</span>
+  <span class="part-title">Evaluation Questions for MVP Testing</span>
+</div>
+
+<p>The following questions are to be asked of early users in structured interviews after four or more weeks of use. They are qualitative — there are no numerical scales.</p>
+
+<ol class="eval-list">
+  <li>How would you describe the experience to a close friend who had never heard of it?</li>
+  <li>Was there a moment when it felt genuinely different from other AI products you have used? If yes, what was that moment?</li>
+  <li>Was there a moment when it felt wrong, mechanical, or unhelpful? If yes, what happened?</li>
+  <li>Did you ever feel pushed toward a conclusion or an emotion you did not choose yourself?</li>
+  <li>Did you ever feel that a memory was used incorrectly, inaccurately, or intrusively?</li>
+  <li>Did the experience change how you felt about yourself, or your relationship with your own thoughts, in any way? If yes, how?</li>
+  <li>Did it make you feel more or less inclined to spend time with people you care about?</li>
+  <li>Did you ever feel that you were becoming dependent on it?</li>
+  <li>Is there anything you wished it would do that it did not do?</li>
+  <li>Is there anything you wished it would stop doing?</li>
+</ol>
+
+<p>These questions should be asked in a relaxed, open conversation — not administered as a form. The answers are for qualitative learning, not for scoring.</p>
+
+<!-- ==================== COLOPHON ==================== -->
+<div class="colophon">
+  Build the conversation first. Get it right before building anything else.<br>
+  Everything else can wait. Presence cannot be added later.
+</div>
+
+<hr class="section-rule">
+<h2 id="authorship-note">Appendix C — Note on authorship</h2>
+<p>This document is credited to "Paolo Zuffa &amp; AI." That credit is a deliberate rhetorical statement — an acknowledgement that generative AI models contributed substantially to drafting, structuring, and refining the text, and that honesty about that contribution matters to this project. The intellectual authorship, the design decisions, and the governing judgements throughout are Paolo Zuffa's. The AI models acted as writing partners, not as independent authors.</p>
+
+</body>
+</html>
