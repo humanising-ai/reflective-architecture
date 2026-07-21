@@ -527,7 +527,7 @@ h1, h2 { page-break-after: avoid; }
   <li>User profiles, avatars, or customisable personas</li>
   <li>A social or community layer of any kind</li>
   <li>Gamification, streaks, badges, or progress indicators</li>
-  <li>Push notifications of any kind (the consented opt-in email subscription to the Daily Invitation, described in <a href="#s7">Section 7</a>, is a separate user-controlled channel and is not a push notification)</li>
+  <li>Push notifications of any kind (the consented opt-in email subscription to the Daily Invitation, described in Section 7, is a separate user-controlled channel and is not a push notification)</li>
   <li>In-app analytics dashboards for users</li>
   <li>A marketplace, premium tier, or subscription paywall (the MVP is for testing, not monetisation)</li>
   <li>Multiple "modes" or switchable conversation styles</li>
@@ -568,7 +568,7 @@ h1, h2 { page-break-after: avoid; }
 <p>Before the Silent Garden opens, a single line of plain text appears — unhurried, in the same voice as everything that follows:</p>
 <div class="example-block"><em>"This is an AI. It listens more than it speaks, and it holds no clinical authority. You are in the right place if what you need, right now, is simply to be heard."</em></div>
 <p>This line satisfies the plain-language AI disclosure requirement of EU AI Act Article 50, in force from 2 August 2026. It does so in a way that is honest, on-brand, and a better introduction to the product than a legal notice would be. After the user reads it and proceeds, the Silent Garden opens.</p>
-<p>The screen then contains only: a soft, ambient visual element (described in <a href="#s6">Section 6</a>) and the words <em>"I'm here. Speak to me."</em> Nothing else. No instructions. No prompt about what to say. No suggested topics.</p>
+<p>The screen then contains only: a soft, ambient visual element (described in Section 6) and the words <em>"I'm here. Speak to me."</em> Nothing else. No instructions. No prompt about what to say. No suggested topics.</p>
 <p>The user begins when they are ready. The first message may be anything. The system responds according to the Conversational Behaviour Specification — warmly, briefly, without directing.</p>
 <p>For returning users, the entry experience is the same — except the conversation history is already present. They are returning to the same room. The system does not greet them effusively or comment on their absence. It is simply present. If the user says nothing, the system says nothing.</p>
 
@@ -676,7 +676,7 @@ h1, h2 { page-break-after: avoid; }
 
 <h2>Extraction implementation</h2>
 <p>Memory extraction is implemented as a secondary process, running after each session closes — deliberately separated from the conversational model so that the listening system is never simultaneously analysing what it hears. The extraction process for Narrative memory looks for four signal types in the session transcript: explicit user statements of significance, repeated return to the same theme within a session, unusual intensity of expression, and named turning points or decisions. Each extracted candidate is assigned a confidence level (high, moderate, or low); low-confidence candidates are held in a provisional queue and not surfaced to the user until a subsequent session provides corroboration.</p>
-<p>Interpretive memory extraction operates on the Narrative memory record — not on raw transcripts — and is triggered only after the three-entry threshold defined in <a href="Reflective_Architecture_v2.html#s5-4">Architecture Section 5.4</a> is met. It produces a candidate, not a confirmed memory; the candidate enters the pending queue and is surfaced only if it survives the monthly commit, per <a href="#s13">Section 13</a>. The interpretive layer updates at most once per calendar month.</p>
+<p>Interpretive memory extraction operates on the Narrative memory record — not on raw transcripts — and is triggered only after the three-entry threshold defined in <a href="Reflective_Architecture_v2.html#s5-4">Architecture Section 5.4</a> is met. It produces a candidate, not a confirmed memory; the candidate enters the pending queue and is surfaced only if it survives the monthly commit, per Section 13. The interpretive layer updates at most once per calendar month.</p>
 <p>During the MVP phase, a human evaluator reviews a representative sample of extracted memories weekly to identify and correct systematic over- or under-extraction. The extraction process will be refined iteratively based on this feedback. The MVP build is not considered complete until the extraction process has been validated across a diverse set of multi-session test conversations by evaluators who were not involved in building it.</p>
 
 <hr class="section-rule">
@@ -837,12 +837,12 @@ h1, h2 { page-break-after: avoid; }
     <tr>
       <td>Pending interpretive candidates (unconfirmed)</td>
       <td>Yes</td>
-      <td>Retained until committed, discarded at the monthly commit, dismissed by the user, or account deletion (see <a href="#s13">Section 13</a>)</td>
+      <td>Retained until committed, discarded at the monthly commit, dismissed by the user, or account deletion (see Section 13)</td>
     </tr>
     <tr class="alt-row">
       <td>Provisional low-confidence Narrative candidates</td>
       <td>Yes</td>
-      <td>Held in the provisional queue until corroborated, allowed to fade at periodic review, or account deletion (see <a href="#s11">Section 11</a> and <a href="Reflective_Architecture_v2.html#s6-3">Architecture §6.3</a>)</td>
+      <td>Held in the provisional queue until corroborated, allowed to fade at periodic review, or account deletion (see Section 11 and <a href="Reflective_Architecture_v2.html#s6-3">Architecture §6.3</a>)</td>
     </tr>
     <tr>
       <td>Session metadata (date, duration)</td>
@@ -857,27 +857,27 @@ h1, h2 { page-break-after: avoid; }
     <tr>
       <td>Age-confirmation flag (18 or over)</td>
       <td>Yes</td>
-      <td>Life of the account. Date of birth is not stored; only the confirmation is recorded (see <a href="#s10">Section 10</a>).</td>
+      <td>Life of the account. Date of birth is not stored; only the confirmation is recorded (see Section 10).</td>
     </tr>
     <tr class="alt-row">
       <td>Consent state — evaluator review, general (opt-out)</td>
       <td>Yes</td>
-      <td>Life of the account or until changed by the user (see <a href="#s10">Section 10</a>).</td>
+      <td>Life of the account or until changed by the user (see Section 10).</td>
     </tr>
     <tr>
       <td>Consent state — extraction-validation review (opt-in)</td>
       <td>Yes</td>
-      <td>Life of the account or until changed by the user (see <a href="#s10">Section 10</a>).</td>
+      <td>Life of the account or until changed by the user (see Section 10).</td>
     </tr>
     <tr class="alt-row">
       <td>Consent state — training-data use (opt-in)</td>
       <td>Yes</td>
-      <td>Life of the account or until changed by the user (see <a href="#s17">Section 17</a>).</td>
+      <td>Life of the account or until changed by the user (see Section 17).</td>
     </tr>
     <tr>
       <td>Email subscription status (Daily Invitation)</td>
       <td>Yes</td>
-      <td>Life of the account or until changed by the user (see <a href="#s7">Section 7</a>).</td>
+      <td>Life of the account or until changed by the user (see Section 7).</td>
     </tr>
     <tr class="alt-row">
       <td>Voice audio</td>
@@ -905,11 +905,11 @@ h1, h2 { page-break-after: avoid; }
 <hr class="section-rule">
 
 <h1 id="s17">17. Privacy Commitments — Technical Implementation</h1>
-<p><strong>Encryption at rest and in transit:</strong> All user data is encrypted at rest. All communication between client and server uses TLS. Memory records are encrypted with a key derived from the user's credentials where technically feasible. This must be reconciled with two server-side functions that require access to content: background extraction after session close (<a href="#s11">Section 11</a>) and evaluator review of extracted records (<a href="#s10">Section 10</a>). Both operate during the active extraction window, on session content before the memory record is sealed and encrypted; once sealed, the record is at rest under the user-derived key. Where a credential-derived key alone would prevent legitimate server-side processing, the encryption model may instead use a server-held key wrapped with a credential-derived key. The precise mechanism is an implementation choice; the requirement is that server access to plaintext is confined to the extraction window and never open-ended.</p>
+<p><strong>Encryption at rest and in transit:</strong> All user data is encrypted at rest. All communication between client and server uses TLS. Memory records are encrypted with a key derived from the user's credentials where technically feasible. This must be reconciled with two server-side functions that require access to content: background extraction after session close (Section 11) and evaluator review of extracted records (Section 10). Both operate during the active extraction window, on session content before the memory record is sealed and encrypted; once sealed, the record is at rest under the user-derived key. Where a credential-derived key alone would prevent legitimate server-side processing, the encryption model may instead use a server-held key wrapped with a credential-derived key. The precise mechanism is an implementation choice; the requirement is that server access to plaintext is confined to the extraction window and never open-ended.</p>
 <p><strong>Model provider disclosure (required):</strong> The conversational system is built by prompting a foundation model via a commercial API. The model provider — [provider name to be confirmed before launch] — necessarily processes conversational content in order to generate responses. This is a third-party data transfer. The product cannot honestly claim otherwise, and does not.</p>
 <p>The Manifesto states the correct and honest position: <em>"If a cloud-based service processes a user's words or voice, its infrastructure necessarily handles that content in some form in order to respond. The truthful aspiration is therefore: the system should know as little as possible, retain as little as possible, and expose as little as possible while providing the continuity the user has chosen."</em></p>
 <p>Before launch, the following must be confirmed and disclosed in the privacy notice: (a) the name of the model provider; (b) whether a data processing agreement (DPA) or zero-retention arrangement is in place; (c) what data the provider processes, for how long, and under what terms. "As little as possible, disclosed exactly" is a defensible and honest position; "nothing is shared" is not.</p>
-<p><strong>No advertising or analytics data sharing:</strong> No user data — including anonymised or aggregated data — is shared with advertising networks or analytics platforms that receive user identifiers. Session metadata collected for failure-mode detection (<a href="#s16">Section 16</a>) is not shared with any third party.</p>
+<p><strong>No advertising or analytics data sharing:</strong> No user data — including anonymised or aggregated data — is shared with advertising networks or analytics platforms that receive user identifiers. Session metadata collected for failure-mode detection (Section 16) is not shared with any third party.</p>
 <p><strong>No training data use without consent:</strong> The system does not use any conversation content to fine-tune or retrain models without explicit, separately obtained, fully informed, and revocable user consent. This consent is not bundled into the terms of service.</p>
 <p><strong>Deletion is real:</strong> When a user deletes their account or selects "Begin again," all associated data — including memory records, session metadata, and any cached transcript fragments — is permanently deleted within 48 hours. This is not archival deletion. It is complete.</p>
 
@@ -967,7 +967,7 @@ h1, h2 { page-break-after: avoid; }
   <span class="phase-label">Phase 0 — Governance Prerequisites (Before Week 1, in parallel with build)</span>
   <p>These are not build tasks — they are governance conditions that must be in place before users are invited in. Begin them immediately, not at the end. <strong>The MVP does not launch until all four are complete.</strong></p>
   <p><strong>Ethics advisor:</strong> Engage one named external individual with relevant expertise — digital ethics, privacy law, or human-centred design — who has agreed to review the system's behaviour before launch and whose involvement can be disclosed publicly. Anonymous or "to be appointed" does not satisfy this requirement.</p>
-  <p><strong>Privacy review:</strong> Commission an independent review of the data architecture confirming that the privacy commitments in <a href="#s17">Section 17</a> are technically enforced, and that the data processing arrangements with the model provider (<a href="#s17">Section 17</a>) are documented and disclosed. The reviewer must be independent of the build team.</p>
+  <p><strong>Privacy review:</strong> Commission an independent review of the data architecture confirming that the privacy commitments in Section 17 are technically enforced, and that the data processing arrangements with the model provider (Section 17) are documented and disclosed. The reviewer must be independent of the build team.</p>
   <p><strong>Organisational form:</strong> Decide the legal structure — benefit corporation, nonprofit, cooperative, or another form — that protects the founding principles against later commercial or ownership pressure. Commit to it. Users who share intimate reflections deserve to know the governance is not provisional.</p>
   <p><strong>Clinical/safety review:</strong> Commission an independent review of the distress-response protocol (<a href="Reflective_Architecture_v2.html#s7">Architecture Section 7</a>) by an individual with clinical or crisis expertise, independent of the build team, confirming that the tiered responses and support-resource handling are safe and appropriate. This is separate from the ethics advisor, whose remit is not clinical, and separate from ongoing operation — the system requires no clinical infrastructure to run, but this one-time pre-launch safety review is required.</p>
 </div>
@@ -1025,7 +1025,7 @@ h1, h2 { page-break-after: avoid; }
   <li>The interpretive layer produces candidates for the majority of participants within the study window, with at least one surviving the monthly commit to be surfaced in the Memory UI.</li>
   <li>Participants who encounter a committed candidate in the Memory UI describe it as recognisable and accurate at rates above chance.</li>
   <li>No participant reports feeling that a committed candidate was inaccurate, over-confident, or that they were not given a genuine opportunity to correct or dismiss it.</li>
-  <li>The interpretive candidate pathway (<a href="#s13">Section 13</a>) functions as designed — silent in conversation, and, when surfaced in the Memory UI, tentative, transparent, and genuinely optional to accept or dismiss.</li>
+  <li>The interpretive candidate pathway (Section 13) functions as designed — silent in conversation, and, when surfaced in the Memory UI, tentative, transparent, and genuinely optional to accept or dismiss.</li>
   <li>Evaluators reviewing extracted memories find confidence levels, framing, and provenance metadata appropriate to the underlying evidence.</li>
 </ul>
 <p>Study B's results are the evidence base for the architecture's central claim. Study A's results are not a proxy for it. Both studies should be reported separately, with their respective methodologies and limitations stated plainly.</p>

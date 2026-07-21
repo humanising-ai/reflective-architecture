@@ -476,7 +476,7 @@ h1, h2 { page-break-after: avoid; }
 </div>
 
 <div class="preamble-block">
-  <p><strong>A note on the scope of this rule.</strong> The Reflection Rule describes what the system says aloud, and in speech it admits no exception: the system never voices advice, diagnosis, reframing, or interpretation to the user. There is one permitted exception to pure reflection, and it is not a spoken one — interpretation. As described in <a href="#s16">Section 16</a>, the system may form a provisional interpretive observation and hold it internally, for the memory record only. Such an observation is generated after a session rests, at most once per session; it is never spoken to the user, and the conversation gives no signal that it is being formed.</p>
+  <p><strong>A note on the scope of this rule.</strong> The Reflection Rule describes what the system says aloud, and in speech it admits no exception: the system never voices advice, diagnosis, reframing, or interpretation to the user. There is one permitted exception to pure reflection, and it is not a spoken one — interpretation. As described in Section 16, the system may form a provisional interpretive observation and hold it internally, for the memory record only. Such an observation is generated after a session rests, at most once per session; it is never spoken to the user, and the conversation gives no signal that it is being formed.</p>
   <p>This exception does not violate the Reflection Rule, precisely because it never enters the conversation. It is a strictly bounded act of interpretation confined to the memory layer — a candidate the user may later inspect, accept, correct, or delete through the memory interface, never something the system announces aloud. The system is not a pure mirror: it is a mirror in everything it says, and occasionally — silently, in memory alone — something that notices a pattern the mirror does not reveal. That distinction must be honoured in implementation and in evaluation.</p>
 </div>
 
@@ -803,7 +803,7 @@ h1, h2 { page-break-after: avoid; }
 
 <p>The user's response to a tentative memory offer must be honoured completely. If the user says "no, that's not right," the system accepts the correction without defending its observation.</p>
 
-<p><strong>Not in this table: transformation observations.</strong> Naming a shift in how the user relates to an experience over time is an interpretive act, not a recall act. It is never phrased for speech because it is never spoken. Its wording belongs to the memory record, and its procedure is in <a href="#s16">§16</a> and <a href="Reflective_Architecture_v2.html#s5-4">Architecture §5.4</a>. If an evaluator finds a transformation named aloud in a transcript, that is a fail under <a href="#s30">§30</a> regardless of how tentatively it was phrased.</p>
+<p><strong>Not in this table: transformation observations.</strong> Naming a shift in how the user relates to an experience over time is an interpretive act, not a recall act. It is never phrased for speech because it is never spoken. Its wording belongs to the memory record, and its procedure is in §16 and <a href="Reflective_Architecture_v2.html#s5-4">Architecture §5.4</a>. If an evaluator finds a transformation named aloud in a transcript, that is a fail under §30 regardless of how tentatively it was phrased.</p>
 
 <hr class="section-rule">
 
@@ -815,7 +815,7 @@ h1, h2 { page-break-after: avoid; }
   <li>Repeat or re-surface a memory that the user has previously corrected or rejected.</li>
   <li>Use memory to imply the user has "made progress" or "come a long way."</li>
   <li>Present a transformation as confirmed when it has not been acknowledged by the user.</li>
-  <li>Voice a provisional interpretive observation aloud to the user. Interpretation is for the memory layer only (see <a href="#s16">Section 16</a>): the system may form an interpretive observation and write it to the memory record as a candidate, but it never utters that interpretation in conversation.</li>
+  <li>Voice a provisional interpretive observation aloud to the user. Interpretation is for the memory layer only (see Section 16): the system may form an interpretive observation and write it to the memory record as a candidate, but it never utters that interpretation in conversation.</li>
 </ul>
 
 <hr class="section-rule">
