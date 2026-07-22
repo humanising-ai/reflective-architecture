@@ -417,10 +417,10 @@ h1, h2, h3 { page-break-after: avoid; }
   <em>The Reflective is a tool for general introspection and self-reflection. It is intended for use by any person aged 18 or over who wishes to think more clearly about their inner life. It does not treat, diagnose, monitor, alleviate, or compensate for any physical or mental health condition. It is not a medical device, a clinical service, or a therapeutic intervention. It is not a substitute for professional care of any kind. Users experiencing mental health difficulties should seek support from qualified professionals.</em>
 </div>
 <p>This statement must be reflected consistently in all marketing, product copy, privacy documentation, and terms of service. Any marketing language that emphasises the product's capacity to help users "heal," "recover," or "overcome" psychological difficulties would contradict this statement and create regulatory exposure.</p>
-
 <!-- ==================== SECTION 5 ==================== -->
-<hr class="section-rule">
 <h1 id="s5">5. Reflection, Influence, and the Ethics of Selective Memory</h1>
+
+<p class="preamble">Chapter 5 governs what the system does <em>aloud, in conversation</em>: the ethics of choosing what to reflect back. It is deliberately separate from the memory machinery of Chapter 6, which governs what the system records and retains <em>silently</em>. The one place the two meet — the line between reflecting something aloud and recording an interpretation silently — is drawn in §5.4 and implemented in §6.6 and §6.4.</p>
 
 <h2 id="s5-1">5.1 Acknowledging that reflection is not neutral</h2>
 <p>The system does not give advice. But this does not mean it is without influence. Every act of selective attention shapes the conversation. When the system chooses to surface a past moment of resilience in response to current distress, that is not a neutral act. It may be helpful — but it is still an intervention. The Reflective Architecture must be honest about this.</p>
@@ -443,10 +443,12 @@ h1, h2, h3 { page-break-after: avoid; }
 </div>
 <p>The second formulation offers the material without asserting it. The user can accept, correct, or ignore it entirely. This is the only acceptable mode of surfacing prior interpretations.</p>
 
-<h2 id="s5-4">5.4 Evidence threshold before naming a transformation</h2>
-<p>The system must not name a transformation prematurely. The risk is that a tentative inference hardens into a label the user begins to inhabit, whether or not it is accurate.</p>
-<p><strong>The boundary.</strong> Surfacing and naming are different acts and sit on different sides of the spoken/silent line. Surfacing prior material — returning to the user something the user expressed, held tentatively and framed as in §5.3 — is permitted aloud in conversation. Naming a transformation — asserting that the user's relationship to an experience has changed over time — is an interpretive act, gated by the threshold below, and is never spoken. It is recorded as an interpretive candidate and made visible only in the memory record, per §6.4. The test is simple: if the observation is drawn from a single thing the user said, it may be reflected aloud; if it is drawn from a pattern across sessions that the user has not named, it belongs to the memory layer alone.</p>
-<p>A transformation should be named only when: at least three separate Narrative memory entries record a related shift, drawn from at least two distinct sessions (multiple entries from a single session do not satisfy this threshold alone); a meaningful interval of time has passed between the earliest and most recent of those entries; and the user has not subsequently contradicted or qualified the earlier statements. Even then, the naming is tentative and silent. It is written to the interpretive layer in language the user will read in their own time — "There has been an impression, over some time, that something may have shifted here, though you would know better than the system would" — and never spoken in conversation. <em>Canonical unit for this threshold throughout all documents: "three separate Narrative entries from at least two distinct sessions."</em></p>
+<h2 id="s5-4">5.4 The line between surfacing and naming a transformation</h2>
+<p><strong>Two different acts, on two sides of the spoken/silent line.</strong> <em>Surfacing</em> prior material — returning to the user something the user expressed, held tentatively and framed as in §5.3 — is permitted aloud in conversation. <em>Naming a transformation</em> — asserting that the user's relationship to an experience has changed over time — is an interpretive act. It is <strong>never spoken</strong>. It is recorded silently as an interpretive candidate and, only if confirmed, made visible in the memory record for the user to read in their own time.</p>
+<p>The test is simple: if the observation is drawn from a single thing the user said, it may be reflected aloud; if it is drawn from a pattern across sessions that the user has not named, it belongs to the memory layer alone.</p>
+<p><strong>Why naming is gated.</strong> The risk is that a tentative inference hardens into a label the user begins to inhabit, whether or not it is accurate. A transformation is therefore never named on the strength of a single moment, and never on the system's initiative in conversation.</p>
+<p><strong>The canonical threshold.</strong> A transformation may be named only where there are <em>at least three separate Narrative memory entries recording a related shift, drawn from at least two distinct sessions</em> (multiple entries from a single session do not satisfy this threshold alone), a meaningful interval of time has passed between the earliest and most recent of those entries, and the user has not subsequently contradicted or qualified the earlier statements. <em>This is the canonical unit referred to throughout all documents: "three separate Narrative entries from at least two distinct sessions."</em></p>
+<p>The threshold above states the <em>principle</em>. How it is applied when interpretive memory is extracted is specified in §6.6; how the resulting candidate is confirmed before it becomes durable memory is specified in §6.4. Even once named, the interpretation remains tentative and silent — written to the interpretive layer in language such as "There has been an impression, over some time, that something may have shifted here, though you would know better than the system would," and never voiced in conversation.</p>
 
 <h2 id="s5-5">5.5 Avoiding the privilege of positive growth narratives</h2>
 <p>This is a subtle but important safeguard. A system designed around healing and transformation may inadvertently create pressure toward growth, resolution, and positivity. This would replicate, in a softer form, precisely the dynamic the architecture is designed to avoid.</p>
@@ -455,6 +457,8 @@ h1, h2, h3 { page-break-after: avoid; }
 <!-- ==================== SECTION 6 ==================== -->
 <hr class="section-rule">
 <h1 id="s6">6. Memory Architecture: Confidence, Provenance, and User Control</h1>
+
+<p class="preamble">This chapter follows the life of a memory in order. <strong>§6.1</strong> defines the four layers of memory; <strong>§6.2</strong> defines the metadata every durable memory carries. <strong>§6.5</strong> defines the session — the unit of time to which everything else is indexed. A memory is then <em>created</em> by extraction (<strong>§6.6</strong>); an interpretive memory is <em>confirmed</em> by the user before it becomes durable (<strong>§6.4</strong>); and finally a memory is <em>retained, faded, or released</em> over the long term (<strong>§6.3</strong>). Each stage is owned by exactly one section; the others point to it rather than restating it.</p>
 
 <h2 id="s6-1">6.1 The four-layer model</h2>
 <p>The memory architecture comprises four layers:</p>
@@ -472,16 +476,17 @@ h1, h2, h3 { page-break-after: avoid; }
 </div>
 
 <h2 id="s6-2">6.2 Memory metadata: confidence, provenance, time, sensitivity, and status</h2>
-<p>Every durable memory — anything retained beyond the ephemeral layer — must carry the following metadata:</p>
+<p>Every durable memory — anything retained beyond the ephemeral layer — must carry the following metadata. These values are assigned when the memory is created (§6.6) and updated as it moves through its life (§6.4, §6.3); this section is their single point of definition.</p>
 <ul class="meta-list">
   <li><strong>Provenance</strong> — whether the memory derives from an explicit user statement or from repeated inference across conversations. These must be treated differently. A memory sourced from an explicit statement ("you said last year that this felt like a beginning") may be recalled with attribution. A memory sourced from inference ("I have the impression that you once experienced this differently") must always be framed as uncertain and held more lightly.</li>
   <li><strong>Confidence</strong> — a qualitative assessment of certainty: high (directly and repeatedly stated by the user), moderate (inferred from consistent patterns), or low (tentative, based on limited evidence). The system's language when surfacing a memory must reflect its confidence level.</li>
   <li><strong>Time</strong> — when the underlying expression or pattern was first observed, and when it was most recently reaffirmed or contradicted.</li>
   <li><strong>Sensitivity</strong> — whether the material concerns highly private domains: trauma, loss, abuse, sexuality, mental health history, family rupture, or other areas where an inaccurate recall would cause harm.</li>
-  <li><strong>Status</strong> — one of: active (currently relevant), fading (no longer frequently referenced), contradicted (the user has expressed a view that conflicts with an earlier memory), corrected (the user has explicitly revised a prior statement), or deleted (the user has chosen to remove it).</li>
+  <li><strong>Status</strong> — one of: active (currently relevant), fading (no longer frequently referenced), contradicted (the user has expressed a view that conflicts with an earlier memory), corrected (the user has explicitly revised a prior statement), or deleted (the user has chosen to remove it). The transitions between these states are governed by §6.3.</li>
 </ul>
 
-<h2 id="s6-3">6.3 The principle of intentional forgetting</h2>
+<h2 id="s6-3">6.3 The principle of intentional forgetting: retention and release</h2>
+<p class="preamble">This section governs the <em>end</em> of a memory's life — how it is retained, allowed to fade, or deleted once it already exists. It does not govern how memories are created (that is extraction, §6.6) or confirmed (that is §6.4). A memory only reaches this section after it has been created and, where interpretive, confirmed.</p>
 <p>A system that appears to forget pain may feel dismissive or even gaslighting — particularly for users who have experienced trauma, bereavement, abuse, or persistent hardship. Their pain is not a temporary state to be tidied away; it may be central to their narrative and their identity.</p>
 <p>The corrected principle is:</p>
 <div class="example-block">
@@ -489,25 +494,40 @@ h1, h2, h3 { page-break-after: avoid; }
 </div>
 <p>This protects against two opposite failures: endlessly resurfacing old pain that has been integrated; and prematurely minimising pain that still matters. The determinant is not the system's judgment about what the user "should" have moved past. It is the user's own continued engagement with the material.</p>
 
-<h3>Operational criteria for memory retention and release</h3>
+<h3>The three grounds for release</h3>
 <p>The default rule is retention. A memory is preserved until one of the following conditions is explicitly met:</p>
 <ul>
   <li><strong>Explicit user deletion.</strong> The user requests removal through the Memory UI, or through a clear conversational instruction: "I don't want to hold onto that anymore" or "you can let that go." This is the primary and most reliable trigger, and must always be honoured immediately.</li>
   <li><strong>User-expressed shift in meaning.</strong> When the user describes a previously painful or unresolved experience using language that indicates integration or a changed relationship — "I've made peace with that" or "I see it differently now" — the system may update the memory's status from <em>active</em> to <em>fading</em> and record the shift as a new interpretive layer. The original record is preserved alongside the newer interpretation; it is not deleted. The user controls whether the older interpretation is formally retired.</li>
   <li><strong>Low-confidence material with extended non-engagement.</strong> If a memory was originally marked as tentative or low-confidence, and the user has not referenced the relevant theme across many sessions over a significant period, the memory may be surfaced to the user during a periodic memory review — and allowed to fade only with the user's passive acknowledgement.</li>
 </ul>
-<p>Two conditions that are explicitly <em>not</em> sufficient grounds for deletion or fading:</p>
+
+<h3>Two grounds that are never sufficient</h3>
+<p>Two conditions are explicitly <em>not</em> sufficient grounds for deletion or fading:</p>
 <ul>
   <li><strong>Time elapsed alone.</strong> Silence is not evidence of healing. The system must never infer resolution from the absence of mention.</li>
   <li><strong>System judgment about readiness.</strong> The system has no authority to decide that the user should have moved past an experience. That determination belongs entirely to the user.</li>
 </ul>
 <p>The distinction between the low-confidence fade pathway and the prohibited "time elapsed alone" trigger rests on a single element: the fade pathway requires an affirmative memory-review step in which the material is surfaced to the user and allowed to fade only with their passive acknowledgement. It is never the passage of time by itself that releases a memory — it is the user's acknowledgement at review.</p>
 
-<h2 id="s6-4">6.4 Who determines long-term memory</h2>
-<p>This is a central governance question. The architecture adopts a hybrid model aligned with the principle of user sovereignty:</p>
+<h2 id="s6-4">6.4 Who determines long-term memory: user sovereignty and the confirmation of candidates</h2>
+<p class="preamble">This section owns the confirmation stage. Extraction (§6.6) <em>generates</em> interpretive candidates; this section specifies who has authority over what becomes durable memory, and the single process — the monthly commit — by which a candidate is confirmed. It is the one authoritative account of that process.</p>
+<p>This is a central governance question. The architecture adopts a hybrid model aligned with the principle of user sovereignty, graduated by how consequential the memory is:</p>
 <p><strong>Ephemeral continuity</strong> — the system may maintain conversational thread automatically within and immediately following a session. This requires no user action.</p>
 <p><strong>Tentative narrative memory</strong> — the system may form provisional internal continuity across sessions to support coherent conversation. These memories are held tentatively and are not surfaced to the user unless relevant.</p>
-<p><strong>Durable interpretive memories</strong> — before any interpretive memory is retained in the long-term layer, it must be confirmed by the user. This confirmation happens silently, through the memory record, never through a spoken prompt in conversation. For example: after a session closes, the system may generate an interpretive candidate — "there seems to be a recurring tension between the wish to be seen and the wish to withdraw" — and place it in the user's memory record as a pending candidate. Nothing is said aloud, and the conversation gives no signal that a candidate has been formed. The candidate is not surfaced to the user immediately on formation. It enters a pending queue and is assessed at the monthly commit described in §6.6. Only the single committed candidate — the one survivor of the monthly assessment — is then made visible in the memory review interface, where it sits in plain language for the user to read, accept, edit, or dismiss at their discretion. Until the monthly commit has run, no candidate is visible to the user at all. Until the user acknowledges the committed candidate through the memory interface, it is not retained as durable memory.</p>
+<p><strong>Durable interpretive memories</strong> — before any interpretive memory is retained in the long-term layer, it must be confirmed by the user. This confirmation happens silently, through the memory record, never through a spoken prompt in conversation.</p>
+
+<h3>The candidate lifecycle</h3>
+<p>An interpretive candidate travels a fixed path from formation to durable memory. Each stage is silent; the conversation gives no signal that any of it is happening.</p>
+<ul>
+  <li><strong>Formation.</strong> After a session closes, extraction (§6.6) may generate an interpretive candidate — for example, "there seems to be a recurring tension between the wish to be seen and the wish to withdraw." At most one candidate is generated per session.</li>
+  <li><strong>Pending queue.</strong> The candidate is placed in the user's memory record as <em>pending</em>. It is <strong>not</strong> surfaced to the user on formation, and nothing is said aloud. Candidates accumulate here between commits.</li>
+  <li><strong>The monthly commit — the single selection gate.</strong> The interpretive layer is updated at most once per calendar month. At the commit, all pending candidates are assessed together: where more than one has accumulated, the <em>strongest is committed and the remainder are discarded</em> rather than carried forward. This cadence is not merely technical — it reflects the pace at which genuine narrative shifts occur in a human life; a system that revised its interpretive model of a person weekly would be producing noise, not insight.</li>
+  <li><strong>User review.</strong> Only the single committed candidate — the one survivor of the monthly assessment — is made visible in the memory review interface, in plain language, for the user to read, accept, edit, or dismiss at their discretion. Until the monthly commit has run, no candidate is visible to the user at all.</li>
+  <li><strong>Acknowledgement.</strong> Until the user acknowledges the committed candidate through the memory interface, it is not retained as durable memory. Once acknowledged, it becomes durable and thereafter lives under the retention and release rules of §6.3.</li>
+</ul>
+<p><strong>The scope of the user's authority.</strong> The user's co-authorship — the right to accept, correct, or decline an interpretation — is exercised on the committed survivor, not on every candidate the system considered. Weaker candidates are assessed and discarded by the system before the user reviews anything; this is intentional, not an oversight. The user's veto is over what the system <em>proposes to remember</em>, not over the system's internal deliberation.</p>
+
 <p><strong>User-initiated memories</strong> — the user may at any time explicitly save, modify, or delete any memory. The full memory record must be inspectable by the user in simple, readable language — never as a data export of system-internal representations.</p>
 <p>This model creates modest friction in exchange for genuine sovereignty. The user is never surprised to discover what the system "thinks it knows" about the user.</p>
 
@@ -518,6 +538,7 @@ h1, h2, h3 { page-break-after: avoid; }
 <p>For voice users, session boundaries may additionally correspond to explicit ending signals from the user ("I'll come back to this") or from a natural conversational close detected in the transcript. The inactivity gap rule applies regardless.</p>
 
 <h2 id="s6-6">6.6 Memory extraction — how layers are populated</h2>
+<p class="preamble">This section owns the creation stage: how Narrative and Interpretive memory are generated from what the user said. What happens to an interpretive candidate <em>after</em> it is generated — the pending queue, the monthly commit, and user confirmation — belongs to §6.4 and is not repeated here.</p>
 <p>The architecture's memory claims are only as strong as the process that populates them. Vague extraction produces vague memory. This section specifies the intended extraction process for each layer.</p>
 
 <h3>Extraction for Layer 2 — Narrative memory</h3>
@@ -529,23 +550,22 @@ h1, h2, h3 { page-break-after: avoid; }
   <li><strong>Intensity of expression.</strong> Language that carries unusual weight, specificity, or emotional charge relative to the rest of the conversation. This is identified through the content and texture of the language, not through acoustic or sentiment analysis.</li>
   <li><strong>Named turning points.</strong> The user has described a decision, a realisation, a shift in how the user sees something, or a moment the user identifies as a before/after.</li>
 </ul>
-<p>Each candidate memory is assigned a confidence level: <strong>high</strong> when derived from an explicit user statement; <strong>moderate</strong> when inferred from repeated return or intensity; <strong>low</strong> when based on a single inference without corroboration. Memories assessed as low confidence are held as provisional candidates. They are not surfaced to the user until corroborated by evidence from a subsequent session.</p>
+<p>Each candidate memory is assigned a confidence level, per the definitions in §6.2: <strong>high</strong> when derived from an explicit user statement; <strong>moderate</strong> when inferred from repeated return or intensity; <strong>low</strong> when based on a single inference without corroboration. Memories assessed as low confidence are held as provisional candidates. They are not surfaced to the user until corroborated by evidence from a subsequent session.</p>
 
 <h3>Extraction for Layer 4 — Interpretive memory</h3>
 <p>Interpretive memory extraction is more conservative by design. It does not operate on raw transcripts. It operates on the accumulated Narrative memory record — reviewing patterns across multiple sessions' worth of already-extracted significant moments, rather than re-processing raw conversation.</p>
-<p>The interpretive extraction process is triggered only when all of the following conditions are met:</p>
+<p>The interpretive extraction process is triggered only when all of the following conditions are met — the canonical threshold stated as a principle in §5.4:</p>
 <ul>
-  <li>At least three separate Narrative memory entries record a related pattern, drawn from at least two distinct sessions — consistent with the canonical threshold in Section 5.4. (Multiple entries from a single session do not satisfy this condition alone.)</li>
+  <li>At least three separate Narrative memory entries record a related pattern, drawn from at least two distinct sessions. (Multiple entries from a single session do not satisfy this condition alone.)</li>
   <li>A meaningful interval of time has elapsed between the earliest and most recent instances of the pattern.</li>
   <li>No recent Narrative entry contradicts or substantially qualifies the earlier instances.</li>
 </ul>
-<p>Even when all conditions are met, the interpretive extraction produces a candidate — not a confirmed memory. The candidate enters the pending queue, is assessed at the monthly commit described below, and — if committed — is surfaced to the user in the memory record described in Section 6.4, and is only retained in the interpretive layer with the user's acknowledgement.</p>
-<p>The interpretive layer must not be updated more than once per calendar month. This constraint is not merely technical — it reflects the pace at which genuine narrative shifts occur in a human life. A system that updates its interpretive model of a person weekly would be producing noise, not insight. Candidates generated between commits — at most one per session — are held as pending in the memory layer and assessed together at the monthly commit, which is the single selection gate: where more than one candidate has accumulated, the strongest is committed and the remainder are discarded rather than carried forward. This means the user's co-authorship authority — the right to accept, correct, or decline an interpretation — is exercised on the committed survivor, not on all candidates that were considered. Weaker candidates are assessed and discarded by the system before the user reviews anything; this is intentional, not an oversight. The user's veto is over what the system proposes to remember, not over the system's internal deliberation.</p>
+<p>Even when all conditions are met, interpretive extraction produces a <em>candidate</em>, not a confirmed memory, and at most one per session. The candidate then enters the confirmation lifecycle — the pending queue, the monthly commit that selects a single survivor, and the requirement of the user's acknowledgement before anything becomes durable — as specified in <strong>§6.4</strong>. Extraction's responsibility ends at the generation of the candidate.</p>
 
 <h3>Safeguards against over- and under-extraction</h3>
 <p>Two failure modes require active mitigation:</p>
-<p><strong>Over-extraction</strong> — the system records too much, treating transient expressions as durable patterns and building a record that feels intrusive or reductive. This is mitigated by the confidence threshold, the three-entry rule for interpretive memory, and user review of any proposed interpretive memory before it is retained.</p>
-<p><strong>Under-extraction</strong> — the system misses what genuinely mattered, producing a memory record that fails to reflect the user's actual story. This is mitigated by the four explicit extraction signals for narrative memory and by the memory review process described below.</p>
+<p><strong>Over-extraction</strong> — the system records too much, treating transient expressions as durable patterns and building a record that feels intrusive or reductive. This is mitigated by the confidence threshold (§6.2), the three-entry rule for interpretive memory, and the user confirmation required before any interpretive memory is retained (§6.4).</p>
+<p><strong>Under-extraction</strong> — the system misses what genuinely mattered, producing a memory record that fails to reflect the user's actual story. This is mitigated by the four explicit extraction signals for narrative memory and by the periodic memory review.</p>
 <p>During the MVP phase, the extraction process should be monitored by a human evaluator who reviews a representative sample of extracted memories weekly — comparing them against the source sessions to identify systematic patterns of over- or under-extraction. This comparison against source sessions requires transcript access, which is governed by the separately obtained opt-in consent described in the MVP document. If the consenting subset is too small to support statistically meaningful validation, the Architecture's aspiration of weekly cross-referencing cannot be fully realised on real-user data during the MVP phase, and this limitation must be stated plainly in evaluation reports. The extraction process is not static: it will require iterative calibration based on this feedback before it can be considered reliable.</p>
 
 <!-- ==================== SECTION 7 ==================== -->
