@@ -79,4 +79,6 @@ This work is licensed under **Creative Commons Attribution-NonCommercial 4.0 Int
 
 **Paolo Zuffa** — paolo.zuffa@gmail.com
 
+**[Professional background](CV_Paolo_Zuffa.md)** — thirty years in international law, EU antitrust, and cross-border advisory (Slaughter and May, Gide Loyrette Nouel, independent consulting) before focusing on AI ethics and socioaffective alignment research.
+
 Authorship is credited to "Paolo Zuffa & AI": generative AI models contributed substantially to drafting and refining the text. The intellectual authorship, design decisions, and governing judgements are Paolo Zuffa's; the models acted as writing partners, not independent authors.
