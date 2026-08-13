@@ -2,37 +2,48 @@
 
 **A framework for presence-centred, dependency-resistant AI.**
 
-Conversational AI is increasingly optimised for engagement, emotional investment, and return frequency. This project argues that for systems operating in emotionally intimate contexts, **dependency-resistance — not engagement — should be the primary socioaffective design constraint**, and sets out the Reflective Architecture as a concrete framework built on that principle.
+Conversational AI is increasingly optimised for engagement, emotional investment, and return frequency. For systems operating in emotionally intimate contexts, that optimisation target is the problem rather than the solution. This project argues that dependency-resistance should be the primary socioaffective design constraint, and sets out a concrete framework built on that principle.
 
-Presence-centred design holds that an AI's value should derive from the quality of a single interaction rather than from accumulated intimacy, retention, or data. The system listens more than it speaks, reflects rather than advises, and builds a memory that tracks the evolution of a person's own meaning over time — under the user's explicit control at every step.
+---
+
+## Three commitments
+
+The architecture's contribution is a specific combination of three design decisions, treated as testable commitments rather than surface features:
+
+**1. User veto over memory formation.** Not retrospective erasure rights, but the right to prevent an interpretation from being formed at all. The user is a co-author rather than a data subject: no interpretive memory becomes durable unless the user explicitly acknowledges it.
+
+**2. Memory as a chronology of interpretations, not an accumulation of facts.** The system records how a person's relationship to their own experience changes over time. It does not build a stable profile of who they are, and it does not grow more confident about them as material accumulates.
+
+**3. Arc-neutrality as a structural constraint.** The system encodes no preferred emotional outcome. Growth, resolution, and healing are not signals of success. The only success criterion is the quality of presence: whether the user, over time, feels genuinely heard.
+
+These are carried by concrete mechanisms rather than tone. A restraint principle gives the user substantially more conversational space than the system. An intentional-forgetting lifecycle ensures nothing is retained or released silently on the user's behalf. Both are specified at a level intended to be verifiable from a transcript.
 
 This is a **design framework, not a deployed product or a proof of concept.** Whether it can be built as specified is an empirical question the documents are careful not to pre-answer.
 
 ---
 
-## What's new here
+## Open problems
 
-The architecture's contribution is a specific combination of three design decisions, treated as testable commitments rather than surface features:
+Three questions the framework does not resolve. These are the parts where challenge would be most useful.
 
-1. **User veto over memory formation.** Not retrospective erasure rights, but the right to prevent an interpretation from being formed in the first place. The user is a co-author who can decline to be interpreted at all — no interpretive memory becomes durable unless the user explicitly acknowledges it.
+**Measurement.** How would anyone demonstrate that a system resists dependency, rather than assert it? Engagement metrics are inverted here — high return frequency is ambiguous between genuine value and the failure mode. The evaluation framework proposes qualitative methods and negative success criteria, but it does not solve the underlying problem of proving a negative about a system's effect on its users.
 
-2. **Memory as a chronology of interpretations, not an accumulation of facts.** The system records *how* a person's relationship to their own experience changes over time, rather than a stable profile of who they are. Memory is a record of a life in motion, not a database of ground truths.
+**Whether arc-neutrality is coherent.** Any system that responds at all arguably expresses a preference. Choosing what to reflect back is an intervention even when nothing is advised. The framework claims there is a defensible line between influence that is transparent, tentative, and reversible and influence that steers — but the line is asserted more confidently than it is argued.
 
-3. **Arc-neutrality as a structural constraint.** The system encodes no preferred emotional outcome. Growth, resolution, and healing are not signals of success. The only success criterion is the quality of presence: whether the user, over time, feels genuinely heard.
-
-These are carried by concrete conversational and memory mechanisms — a restraint principle under which the user occupies most of the conversational space, and an intentional-forgetting lifecycle in which nothing is released or retained silently on the user's behalf.
+**Extraction reliability.** The memory architecture's claims are only as strong as the process that populates it. The specified thresholds — three narrative entries across at least two sessions, a monthly interpretive commit — are reasoned rather than empirical. They have not been calibrated against real conversations, and the framework says so.
 
 ---
 
-## Why now
+## Regulatory context
 
-The framework is directly responsive to the socioaffective-alignment problem now under active regulatory scrutiny:
+The dependency-and-engagement failure mode this architecture is built to resist is now under active regulatory scrutiny:
 
-- **EU AI Act** — Article 50 transparency obligations, effective **2 August 2026**.
-- **US FTC** — September 2025 inquiry into companion chatbots and their effects on children and teens.
-- **US state legislation** — disclosure, crisis-referral, and dependency-related safeguards enacted across California, Nevada, Utah, Illinois, and New York in 2025–26.
+- **EU AI Act, Article 5(1)(a)–(b)** — the prohibition on manipulative or deceptive techniques and on exploiting vulnerabilities, applicable since February 2025. This is the substantive constraint the architecture is designed against.
+- **EU AI Act, Article 50** — transparency and disclosure obligations, enforceable since 2 August 2026. This is a floor: it requires telling users they are talking to a machine, and says nothing about what the machine should then do. The framework is concerned with what lies past it.
+- **US FTC** — September 2025 inquiry into companion chatbots and their effects on children and teenagers.
+- **US state legislation** — disclosure, crisis-referral, and dependency-related safeguards enacted across California, Nevada, Utah, Illinois, and New York during 2025–26.
 
-The dependency-and-engagement failure mode this architecture is built to resist is precisely what regulators and researchers are now targeting. Presence-centred design addresses it structurally rather than as a bolt-on safeguard.
+The argument here is that these obligations are better met architecturally than as bolt-on safeguards, and that a system designed around presence rather than engagement meets several of them as a byproduct.
 
 ---
 
@@ -43,42 +54,38 @@ Read in this order for a first pass:
 | # | Document | What it is |
 |---|---|---|
 | 1 | [**Humanising AI — The Manifesto**](Reflective_Manifesto_v2_short.pdf) | The founding statement and the shortest entry point. Start here. |
-| 2 | [**The Reflective Architecture** *(Conceptual Framework, v2)*](Reflective_Architecture_v2.pdf) | The main framework: the thesis, the memory architecture, the ethics of selective memory, distress response, privacy, governance, and where the work departs from prior systems. |
-| 3 | [**The Reflective — Conversational Behaviour Specification** *(CBS, v1)*](Reflective_CBS_v1.pdf) | The operational, testable rules for how the system speaks — written to be verifiable from a transcript. |
-| 4 | [**The Reflective — MVP Scope & Product Requirements** *(v1)*](Reflective_MVP_v1.pdf) | What the first buildable version is, is not, and defers — a constraint document as much as a requirements document. |
+| 2 | [**The Reflective Architecture** *(Conceptual Framework)*](Reflective_Architecture_v2.pdf) | The main framework: the thesis, the memory architecture, the ethics of selective memory, distress response, privacy, and governance. |
+| 3 | [**Conversational Behaviour Specification** *(CBS)*](Reflective_CBS_v1.pdf) | The operational rules for how the system speaks — written to be verifiable from a transcript. |
+| 4 | [**MVP Scope & Product Requirements**](Reflective_MVP_v1.pdf) | What the first buildable version is, is not, and defers. A constraint document as much as a requirements document. |
 
-HTML versions of all documents are also available in this repository.
+HTML versions of all four documents are also in this repository. Point versions and revision history are in [`CHANGELOG.md`](CHANGELOG.md).
 
 ---
 
 ## Status
 
-Conceptual framework, published openly for critique and collaboration. The documents are a starting point, not a final answer; they will be strengthened by challenge and correction. If something is wrong or missing, I'd genuinely like to be told.
+Conceptual framework, published openly for critique. The documents are a starting point rather than a final answer. If something is wrong or missing, I would like to be told.
 
 ---
 
 ## Citation
 
-If you reference this work, please cite:
-
 > Zuffa, P. (2026). *The Reflective Architecture: A Framework for Presence-Centred, Dependency-Resistant AI.* Humanising AI. https://github.com/humanising-ai/reflective-architecture
 
-A machine-readable `CITATION.cff` is included in this repository. An SSRN preprint with a stable citation handle is forthcoming — this section will be updated once available.
+A machine-readable `CITATION.cff` is included. An SSRN preprint with a stable citation handle is forthcoming; this section will be updated once available.
 
 ---
 
-## License and commercial use
+## Licence
 
-This work is licensed under **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**. You are free to share and adapt the material for non-commercial purposes, with attribution. See [`LICENSE.md`](LICENSE.md) for the full terms.
-
-**Commercial use — including implementing this framework in a commercial product, or developing a derived work commercially — requires a separate licence.** If you are an AI lab, product team, or organisation interested in building on this work, or in a dual-licensing or advisory arrangement, please get in touch directly. If you are working on related problems, I'd welcome the conversation.
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). See [`LICENSE.md`](LICENSE.md).
 
 ---
 
 ## Author and contact
 
-**Paolo Zuffa** — paolo.zuffa@gmail.com
+**Paolo Zuffa** — paolo.zuffa@gmail.com · [background](CV_Paolo_Zuffa.md)
 
-**[Professional background](CV_Paolo_Zuffa.md)** — thirty years in international law, EU antitrust, and cross-border advisory (Slaughter and May, Gide Loyrette Nouel, independent consulting) before focusing on AI ethics and socioaffective alignment research.
+Thirty years in international law and EU competition practice before focusing on AI ethics and socioaffective alignment. If you are working on related problems — in a lab, a product team, or independently — I would welcome the conversation, including about building on this work commercially.
 
-Authorship is credited to "Paolo Zuffa & AI": generative AI models contributed substantially to drafting and refining the text. The intellectual authorship, design decisions, and governing judgements are Paolo Zuffa's; the models acted as writing partners, not independent authors.
+Authorship is credited to "Paolo Zuffa & AI": generative AI models contributed substantially to drafting and refining the text. The intellectual authorship, design decisions, and governing judgements are mine; the models acted as writing partners, not independent authors.
