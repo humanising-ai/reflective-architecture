@@ -53,12 +53,12 @@ Read in this order for a first pass:
 
 | # | Document | What it is |
 |---|---|---|
-| 1 | [**Humanising AI — The Manifesto**](Reflective_Manifesto_v2_short.pdf) | The founding statement and the shortest entry point. Start here. |
-| 2 | [**The Reflective Architecture** *(Conceptual Framework)*](Reflective_Architecture_v2.pdf) | The main framework: the thesis, the memory architecture, the ethics of selective memory, distress response, privacy, and governance. |
-| 3 | [**Conversational Behaviour Specification** *(CBS)*](Reflective_CBS_v1.pdf) | The operational rules for how the system speaks — written to be verifiable from a transcript. |
-| 4 | [**MVP Scope & Product Requirements**](Reflective_MVP_v1.pdf) | What the first buildable version is, is not, and defers. A constraint document as much as a requirements document. |
+| 1 | [**Humanising AI — The Manifesto**](https://github.com/humanising-ai/reflective-architecture/blob/main/Reflective_Manifesto_v2_short.pdf) | The founding statement and the shortest entry point. Start here. |
+| 2 | [**The Reflective Architecture** *(Conceptual Framework)*](https://github.com/humanising-ai/reflective-architecture/blob/main/Reflective_Architecture_v2.pdf) | The main framework: the thesis, the memory architecture, the ethics of selective memory, distress response, privacy, and governance. |
+| 3 | [**Conversational Behaviour Specification** *(CBS)*](https://github.com/humanising-ai/reflective-architecture/blob/main/Reflective_CBS_v1.pdf) | The operational rules for how the system speaks — written to be verifiable from a transcript. |
+| 4 | [**MVP Scope & Product Requirements**](https://github.com/humanising-ai/reflective-architecture/blob/main/Reflective_MVP_v1.pdf) | What the first buildable version is, is not, and defers. A constraint document as much as a requirements document. |
 
-HTML versions of all four documents are also in this repository. Point versions and revision history are in [`CHANGELOG.md`](CHANGELOG.md).
+HTML versions of all four documents are also in this repository. Point versions and revision history are in [`CHANGELOG.md`](https://github.com/humanising-ai/reflective-architecture/blob/main/CHANGELOG.md).
 
 ---
 
@@ -78,13 +78,13 @@ A machine-readable `CITATION.cff` is included. An SSRN preprint with a stable ci
 
 ## Licence
 
-Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). See [`LICENSE.md`](LICENSE.md).
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). See [`LICENSE.md`](https://github.com/humanising-ai/reflective-architecture/blob/main/LICENSE.md).
 
 ---
 
 ## Author and contact
 
-**Paolo Zuffa** — paolo.zuffa@gmail.com · [background](CV_Paolo_Zuffa.md)
+**Paolo Zuffa** — paolo.zuffa@gmail.com · [background](https://github.com/humanising-ai/reflective-architecture/blob/main/CV_Paolo_Zuffa.md)
 
 Thirty years in international law and EU competition practice before focusing on AI ethics and socioaffective alignment. If you are working on related problems — in a lab, a product team, or independently — I would welcome the conversation, including about building on this work commercially.
 
