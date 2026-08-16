@@ -1,6 +1,6 @@
 # Paolo Zuffa
 
-**Independent Researcher | AI Ethics & Socioaffective Alignment**
+**Independent Researcher | Regulatory Analysis of Conversational AI Design**
 
 📧 paolo.zuffa@gmail.com  
 🔗 ORCID: [0009-0006-3649-6345](https://orcid.org/0009-0006-3649-6345)  
@@ -22,11 +22,11 @@ The framework is published openly and is designed to be tested, challenged, and 
 
 ## Professional Experience
 
-### Independent Researcher — AI Ethics & Socioaffective Alignment
+### Independent Researcher — Regulatory Analysis of Conversational AI Design
 **Self-employed**  
 **2019 – Present | Italy**
 
-Research on dependency-resistant design for conversational AI, with emphasis on regulatory compliance (EU AI Act) and socioaffective alignment.
+Research on dependency-resistant design for conversational AI, with emphasis on regulatory compliance (EU AI Act) and architectural approaches to alignment.
 
 Developed *The Reflective Architecture*, a framework for presence-centered conversational AI published on SSRN (2026) with companion technical specifications.
 
@@ -139,6 +139,6 @@ The framework advances three core claims:
 
 ## Contact
 
-For advisory, research, or collaborative opportunities in AI ethics, socioaffective alignment, trust & safety, or regulatory compliance:
+For advisory, research, or collaborative opportunities in regulatory analysis of conversational AI, trust & safety, or compliance architecture:
 
 📧 **paolo.zuffa@gmail.com**
