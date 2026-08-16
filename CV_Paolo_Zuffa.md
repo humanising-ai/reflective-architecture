@@ -28,12 +28,12 @@ The framework is published openly and is designed to be tested, challenged, and 
 
 Research on dependency-resistant design for conversational AI, with emphasis on regulatory compliance (EU AI Act) and architectural approaches to alignment.
 
-Developed *The Reflective Architecture*, a framework for presence-centered conversational AI published on SSRN (2026) with companion technical specifications.
+Developed *The Reflective Architecture*, a framework for presence-centered conversational AI with companion technical specifications.
 
 Research areas: memory architecture, user sovereignty, arc-neutral interaction design, intentional forgetting, distress response protocols.
 
 **Publications:**
-- [*The Reflective Architecture: A Framework for Presence-Centred, Dependency-Resistant AI*](https://ssrn.com/abstract=7202600) (SSRN, 2026)
+- [*The Reflective Architecture: A Framework for Presence-Centred, Dependency-Resistant AI*](Reflective_Architecture_v2.pdf) (2026)
 - [*The Reflective — Conversational Behaviour Specification*](Reflective_CBS_v1.pdf) (2026)
 - [*The Reflective — MVP Scope & Product Requirements*](Reflective_MVP_v1.pdf) (2026)
 - [*Humanising AI — The Reflective Architecture (Manifesto)*](Reflective_Manifesto_v2_short.pdf) (2026)
@@ -116,8 +116,7 @@ Admitted to the Bar (Italy)
 
 A design framework for conversational AI systems responsive to emerging regulatory requirements (EU AI Act Article 50, FTC inquiry, US state-level mandates). Treats dependency-resistance as a structural constraint rather than a bolt-on safeguard.
 
-**Repository:** https://github.com/humanising-ai/reflective-architecture  
-**SSRN Paper:** https://ssrn.com/abstract=7202600
+**Repository:** https://github.com/humanising-ai/reflective-architecture
 
 The framework advances three core claims:
 

@@ -74,7 +74,7 @@ Conceptual framework, published openly for critique. The documents are a startin
 
 > Zuffa, P. (2026). *The Reflective Architecture: A Framework for Presence-Centred, Dependency-Resistant AI.* Humanising AI. https://github.com/humanising-ai/reflective-architecture
 
-A machine-readable `CITATION.cff` is included. An SSRN preprint with a stable citation handle is forthcoming; this section will be updated once available.
+A machine-readable `CITATION.cff` is included.
 
 ---
 
