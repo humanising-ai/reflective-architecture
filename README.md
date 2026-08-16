@@ -14,7 +14,7 @@ The architecture's contribution is a specific combination of three design decisi
 
 **2. Memory as a chronology of interpretations, not an accumulation of facts.** The system records how a person's relationship to their own experience changes over time. It does not build a stable profile of who they are, and it does not grow more confident about them as material accumulates.
 
-**3. Arc-neutrality as a structural constraint.** The system encodes no preferred emotional outcome. Growth, resolution, and healing are not signals of success. The only success criterion is the quality of presence: whether the user, over time, feels genuinely heard.
+**3. Arc-neutrality: no accumulating preference.** The system encodes no target emotional state for the user. Growth, resolution, and healing are not signals of success; the only criterion is the quality of presence. This is deliberately the narrow claim. Every reflection selects, and every selection carries direction, so local neutrality is not available to any system that responds at all. What is claimed is that the local directions do not compound into a tilt, and that the residual preferences which cannot be removed are disclosed rather than denied.
 
 These are carried by concrete mechanisms rather than tone. A restraint principle gives the user substantially more conversational space than the system. An intentional-forgetting lifecycle ensures nothing is retained or released silently on the user's behalf. Both are specified at a level intended to be verifiable from a transcript.
 
@@ -24,13 +24,13 @@ This is a **design framework, not a deployed product or a proof of concept.** Wh
 
 ## Open problems
 
-Three questions the framework does not resolve. These are the parts where challenge would be most useful.
+Three questions I have not resolved. These are where challenge would be most useful.
 
-**Measurement.** How would anyone demonstrate that a system resists dependency, rather than assert it? Engagement metrics are inverted here — high return frequency is ambiguous between genuine value and the failure mode. The evaluation framework proposes qualitative methods and negative success criteria, but it does not solve the underlying problem of proving a negative about a system's effect on its users.
+**Measurement.** I do not know how anyone would demonstrate that a system resists dependency rather than assert it. Return frequency is ambiguous between genuine value and the failure mode, so the primary behavioural signal points both ways at once. My current position is that the honest claim is narrower than it first appears: one can audit the *absence of mechanisms* — no engagement term in any objective, no unsolicited outreach, no memory surfaced to re-establish contact — but not demonstrate the *absence of effect* on a person's life. The second would require evidence I have no way to generate before launch.
 
-**Whether arc-neutrality is coherent.** Any system that responds at all arguably expresses a preference. Choosing what to reflect back is an intervention even when nothing is advised. The framework claims there is a defensible line between influence that is transparent, tentative, and reversible and influence that steers — but the line is asserted more confidently than it is argued.
+**The limits of arc-neutrality.** The narrow claim above is defensible; whether it is sufficient is another matter. Under conversational feedback, small unbiased perturbations can still settle into a stable attractor, which would collapse the distinction between local and accumulating preference and take most of the argument with it. There is also one declared exception: at the highest distress tier the system prefers that the user stays alive, and acts on it. A constraint that admits one exception is a policy rather than an invariant, and the argument for a second exception will resemble the argument for the first.
 
-**Extraction reliability.** The memory architecture's claims are only as strong as the process that populates it. The specified thresholds — three narrative entries across at least two sessions, a monthly interpretive commit — are reasoned rather than empirical. They have not been calibrated against real conversations, and the framework says so.
+**Extraction reliability.** The memory architecture's claims are only as strong as the process that populates it. The specified thresholds — three narrative entries across at least two sessions, a monthly interpretive commit — are reasoned rather than empirical. They have not been calibrated against real conversations.
 
 ---
 
@@ -39,11 +39,11 @@ Three questions the framework does not resolve. These are the parts where challe
 The dependency-and-engagement failure mode this architecture is built to resist is now under active regulatory scrutiny:
 
 - **EU AI Act, Article 5(1)(a)–(b)** — the prohibition on manipulative or deceptive techniques and on exploiting vulnerabilities, applicable since February 2025. This is the substantive constraint the architecture is designed against.
-- **EU AI Act, Article 50** — transparency and disclosure obligations, enforceable since 2 August 2026. This is a floor: it requires telling users they are talking to a machine, and says nothing about what the machine should then do. The framework is concerned with what lies past it.
-- **US FTC** — September 2025 inquiry into companion chatbots and their effects on children and teenagers.
-- **US state legislation** — disclosure, crisis-referral, and dependency-related safeguards enacted across California, Nevada, Utah, Illinois, and New York during 2025–26.
+- **EU AI Act, Article 50** — transparency and disclosure obligations, enforceable since 2 August 2026. This is a floor: it requires telling users they are talking to a machine, and says nothing about what the machine should then do.
+- **US FTC** — Section 6(b) inquiry opened September 2025 into seven companies, covering companion chatbots and their effects on minors.
+- **US state legislation** — California SB 243 and New York's AI Companion Models law in force; Washington HB 2225 and Connecticut SB 5 enumerate specific prohibited techniques producing emotional dependence.
 
-The argument here is that these obligations are better met architecturally than as bolt-on safeguards, and that a system designed around presence rather than engagement meets several of them as a byproduct.
+A companion analysis argues that Article 5 is decision-shaped while dependency is disposition-shaped, and that the provision therefore catches the egregious cases while missing the structural one. If that is right, these obligations are better met architecturally than through compliance mapping.
 
 ---
 
@@ -58,7 +58,9 @@ Read in this order for a first pass:
 | 3 | [**Conversational Behaviour Specification** *(CBS)*](https://github.com/humanising-ai/reflective-architecture/blob/main/Reflective_CBS_v1.pdf) | The operational rules for how the system speaks — written to be verifiable from a transcript. |
 | 4 | [**MVP Scope & Product Requirements**](https://github.com/humanising-ai/reflective-architecture/blob/main/Reflective_MVP_v1.pdf) | What the first buildable version is, is not, and defers. A constraint document as much as a requirements document. |
 
-HTML versions of all four documents are also in this repository. Point versions and revision history are in [`CHANGELOG.md`](https://github.com/humanising-ai/reflective-architecture/blob/main/CHANGELOG.md).
+Three short papers develop the open problems above: on Article 5 and what it does not reach, on whether arc-neutrality is coherent, and on how dependency-resistance could be measured.
+
+HTML versions of all documents are also in this repository. Point versions and revision history are in [`CHANGELOG.md`](https://github.com/humanising-ai/reflective-architecture/blob/main/CHANGELOG.md).
 
 ---
 
