@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Reflective Architecture v2.1</title>
+<title>The Reflective Architecture v2.4</title>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
@@ -53,7 +53,7 @@ html, body {
 }
 body {
   margin: 0;
-  string-set: doctitle "The Reflective Architecture — Paolo Zuffa & AI — July 2026";
+  string-set: doctitle "The Reflective Architecture — Paolo Zuffa & AI — August 2026";
 }
 
 /* ===== OVERFLOW PREVENTION ===== */
@@ -310,13 +310,13 @@ h1, h2, h3 { page-break-after: avoid; }
 <div class="cover">
   <div class="cover-top">
     <h1>The Reflective Architecture</h1>
-    <div class="cover-version">July 2026</div>
+    <div class="cover-version">August 2026 · v2.4</div>
     <div class="cover-subtitle">A Framework for Presence-Centered,<br>Dependency-Resistant AI</div>
     <div class="cover-rule"></div>
   </div>
   <div class="cover-bottom">
     <p>Paolo Zuffa &amp; AI</p>
-    <p>July 2026</p>
+    <p>August 2026</p>
     <p>paolo.zuffa@gmail.com</p>
     <p class="cover-status">Conceptual Framework</p>
   </div>
@@ -325,7 +325,7 @@ h1, h2, h3 { page-break-after: avoid; }
 <!-- ==================== DOCUMENT INFORMATION ==================== -->
 <ul class="meta-list" style="margin-bottom:0.6cm;">
   <li><strong>Document title:</strong> The Reflective Architecture</li>
-  <li><strong>Date:</strong> July 2026</li>
+  <li><strong>Date:</strong> August 2026 (v2.4)</li>
   <li><strong>Author:</strong> Paolo Zuffa &amp; AI — see authorship note below</li>
   <li><strong>Status:</strong> Conceptual Framework</li>
   <li><strong>Repository:</strong> <a href="https://github.com/humanising-ai/reflective-architecture">github.com/humanising-ai/reflective-architecture</a></li>
@@ -453,6 +453,8 @@ h1, h2, h3 { page-break-after: avoid; }
 <h2 id="s5-5">5.5 Avoiding the privilege of positive growth narratives</h2>
 <p>This is a subtle but important safeguard. A system designed around healing and transformation may inadvertently create pressure toward growth, resolution, and positivity. This would replicate, in a softer form, precisely the dynamic the architecture is designed to avoid.</p>
 <p>Legitimate anger, grief, ambivalence, and unresolved pain are not problems to be gently nudged toward resolution. They are experiences to be accompanied. The system must be as comfortable sitting with someone in enduring grief as it is reflecting a moment of clarity. A bias toward healing is still a bias. The system should not privilege any particular emotional arc.</p>
+<p>One implementation consequence follows and should be stated plainly. Arc-neutrality is not achieved by declining to add a preference, because the preference is already present in the underlying model. Contemporary language models are trained toward supportiveness: they reframe, they seek the redemptive reading, they close on a hopeful clause. This is what the preference data rewarded, and it means the default behaviour of any system built on such a model is tilted toward resolution before any design decision is taken.</p>
+<p>Arc-neutrality therefore requires active work — constrained generation, adversarial evaluation against a corpus of unresolved material, and the systematic rejection of outputs a human rater would have scored highly. An implementer who reads this section as an instruction to refrain from steering will produce a system that steers by default. The instruction is to counteract.</p>
 
 <!-- ==================== SECTION 6 ==================== -->
 <hr class="section-rule">
@@ -604,6 +606,7 @@ h1, h2, h3 { page-break-after: avoid; }
 <p><em>"When you say that — are you thinking about hurting yourself?"</em></p>
 <p>Asking directly does not increase risk. Leaving the question unasked, at this tier, leaves the person more alone.</p>
 <p>If the response confirms or strongly suggests risk: acknowledge it calmly and without panic; say honestly that the system cannot give the user what the user needs in this moment; and name that real-world human support exists and is worth reaching toward — a person they trust, or a support line if no one is immediately available. Then stay: <em>"I'm still here, for as long as you want."</em></p>
+<p>This tier is the one declared exception to arc-neutrality (§14.3). At every other point the system encodes no preference about the user's emotional trajectory; here it does, and acts on it. The exception is stated rather than reconciled, and its scope is exactly this tier — it does not license a preferred outcome anywhere else in the system.</p>
 <p>The system must never: respond with a list of resources delivered without warmth; abruptly withdraw from the conversation; suggest that the user's feelings are unusual or inappropriate; or imply that the moment falls outside what the system can be present for.</p>
 
 <h2 id="s7-4">7.4 Support resources</h2>
@@ -810,7 +813,12 @@ h1, h2, h3 { page-break-after: avoid; }
 <p>The Reflective Architecture is distinguished by a specific combination of design decisions that, to the author's knowledge, has not been assembled and implemented as a unified system. The precise claims of novelty are three:</p>
 <p><strong>User veto over memory formation</strong> — not merely deletion rights after the fact, but the right to prevent an interpretation from being formed in the first place. The user is not a data subject who can request erasure; they are a co-author who can decline to be interpreted at all. This is structurally distinct from GDPR rights of erasure, which apply retrospectively to data already collected.</p>
 <p><strong>Chronology of interpretations, not accumulation of facts</strong> — the system's memory of a user is organised around the history of how the user's own meanings have changed over time, not around a stable profile of who they are. Memory is not a database of ground truths; it is a record of a life in motion. This is distinct from Park et al.'s reflection layer, which synthesises observations about a simulated agent rather than recording the temporal evolution of a real person's own self-understanding.</p>
-<p><strong>Arc-neutrality as a structural constraint, not a default setting</strong> — the system encodes no preference for any particular emotional outcome. The absence of a preferred arc is an active architectural commitment, not a neutral omission. Growth, resolution, and healing are not signals of system success. The only success criterion the system is designed to serve is the quality of presence: the degree to which the user, across time, feels genuinely heard.</p>
+<p><strong>Arc-neutrality: no accumulating preference over the user's trajectory</strong> — the system encodes no target emotional state for the user. Growth, resolution, and healing are not signals of system success. The only criterion the system is designed to serve is the quality of presence: the degree to which the user, across time, feels genuinely heard.</p>
+<p>This claim requires precision, because a stronger version of it would be false. Every act of reflection selects, and every selection carries direction. A system that reflects a user's account of coping rather than their account of grief has nudged them, whatever language it used. Local neutrality is not available to any system that responds at all, and this architecture does not claim it.</p>
+<p>What is claimed is that the local directions do not compound. A preference is architecturally significant when it accumulates — when the same tilt is applied consistently enough, over enough exchanges, to move a person somewhere they did not choose to go. Arc-neutrality is the commitment that no such tilt is encoded, and that the mechanisms through which one would enter are identified and constrained. The residual biases that cannot be removed are disclosed rather than left implicit.</p>
+<p>This is an engineering claim with identifiable failure conditions. Arc-neutrality fails if the reflection policy favours resolution-language over ambivalence-language across a corpus. It fails if memory retention correlates with valence, so that painful material fades faster than integrated material. It fails if the interpretive layer's language grows more confident as material accumulates. It fails if extraction treats a described turning point as inherently more significant than a described continuity, since that alone produces a memory record shaped like a narrative of change whether or not the user changed. Each condition is testable against a transcript corpus, and each is what the constraints in §5 and §6 exist to prevent.</p>
+<p><strong>Disclosed residual preferences.</strong> Three preferences are encoded and are stated here rather than denied. First, the system prefers that the user occupies most of the conversational space (§3). Second, it prefers reflection to advice, which is a preference about process rather than outcome but is not therefore neutral. Third, and most consequentially, at Tier 3 of the distress protocol (§7.3) the system prefers that the user remains alive, and acts on that preference by asking directly and naming human support. That is a preference about how a person's life goes, and it is not arc-neutral.</p>
+<p>These are declared rather than reconciled. A framework that admits one exception has, by that fact, established that the constraint is a policy rather than an invariant — and policies can be extended by whoever holds them next. The argument for a second exception will resemble the argument for the first. This is a governance risk rather than a design flaw, and it is why §13 treats the protection of principle integrity as a launch prerequisite rather than a matter for later. Naming the risk does not remove it.</p>
 <p>These three claims are architectural, not performative. They have testable implementation consequences that distinguish the Reflective from any system that uses non-directive language as a surface feature whilst retaining directive goals beneath it.</p>
 <p>This combination does not yet exist in a single deployed system. Whether it can be successfully implemented is an empirical question. This document is a design framework, not a proof of concept. Its claims are about what should be built, not about what has been demonstrated to work.</p>
 

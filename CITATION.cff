@@ -5,10 +5,10 @@ authors:
   - family-names: Zuffa
     given-names: Paolo
     email: paolo.zuffa@gmail.com
-date-released: 2026-07-17
+date-released: 2026-08-16
 url: "https://github.com/humanising-ai/reflective-architecture"
 license: CC-BY-NC-4.0
-version: "2.1"
+version: "2.4"
 type: software
 keywords:
   - artificial intelligence
