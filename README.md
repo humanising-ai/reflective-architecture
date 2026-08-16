@@ -39,7 +39,7 @@ Three questions I have not resolved. These are where challenge would be most use
 The dependency-and-engagement failure mode this architecture is built to resist is now under active regulatory scrutiny:
 
 - **EU AI Act, Article 5(1)(a)–(b)** — the prohibition on manipulative or deceptive techniques and on exploiting vulnerabilities, applicable since February 2025. This is the substantive constraint the architecture is designed against.
-- **EU AI Act, Article 50** — transparency and disclosure obligations, enforceable since 2 August 2026. This is a floor: it requires telling users they are talking to a machine, and says nothing about what the machine should then do.
+- **EU AI Act, Article 50** — transparency and disclosure obligations, enforceable from 2 August 2026. This is a floor: it requires telling users they are talking to a machine, and says nothing about what the machine should then do.
 - **US FTC** — Section 6(b) inquiry opened September 2025 into seven companies, covering companion chatbots and their effects on minors.
 - **US state legislation** — California SB 243 and New York's AI Companion Models law in force; Washington HB 2225 and Connecticut SB 5 enumerate specific prohibited techniques producing emotional dependence.
 
@@ -88,6 +88,6 @@ Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). See
 
 **Paolo Zuffa** — paolo.zuffa@gmail.com · [background](https://github.com/humanising-ai/reflective-architecture/blob/main/CV_Paolo_Zuffa.md)
 
-Thirty years in international law and EU competition practice before focusing on AI ethics and socioaffective alignment. If you are working on related problems — in a lab, a product team, or independently — I would welcome the conversation, including about building on this work commercially.
+Thirty years in international law and EU competition practice before focusing on regulatory analysis of conversational AI design. If you are working on related problems — in a lab, a product team, or independently — I would welcome the conversation, including about building on this work commercially.
 
 Authorship is credited to "Paolo Zuffa & AI": generative AI models contributed substantially to drafting and refining the text. The intellectual authorship, design decisions, and governing judgements are mine; the models acted as writing partners, not independent authors.
