@@ -3,6 +3,21 @@
 All notable changes to The Reflective Architecture are documented here.
 This project follows a simple versioning scheme tied to the core Architecture document.
 
+## [2.5] — 2026-08-16
+
+### Added
+- **Manipulation prohibition — EU AI Act, Article 5** (new Architecture §9.2). A new subsection sets out how Article 5(1)(a)–(b) applies to conversational AI in the emotional register: intention is not required (a system is caught by the *effect* of distorting behaviour, and the Commission's Guidelines of 4 February 2025 note that manipulative techniques may emerge through reinforcement learning without any provider intending them), and "use" extends to reasonably foreseeable misuse. The emerging American standard of care (Connecticut SB 5, Washington HB 2225) is noted as a set of auditable, mechanism-based prohibitions that the design commitments in §2, §3, and §5 already exclude. Cross-referenced to the companion analysis *The Decision-Shaped Prohibition*.
+
+### Changed
+- **Section 9 retitled** "Ethical Boundaries, Privacy, and Regulatory Constraint" (was "Ethical Boundaries and Privacy") to reflect the addition of the Article 5 material.
+- **Evaluation claims reframed** (§12.4, retitled "What the evaluation can and cannot claim", was "What the evaluation must not claim"). The section now states affirmatively what the mechanism-based evaluation *can* establish, alongside its limits, rather than only what it must not claim.
+- **§5.5** — "should not privilege" → "should not systematically privilege", aligning the wording with the restated arc-neutrality claim.
+- **§14.3** — closing sentence revised to "These claims are architectural rather than performative, and they are stated with their limits attached."
+
+### Editorial
+- Added companion-paper cross-references to the cover: *The Decision-Shaped Prohibition* (Article 5), *Is Arc-Neutrality Coherent?*, and *How Would You Know?* (measurement).
+- British-English spelling pass across the Architecture document (externalised, presence-centred, honour, localised, behaviour) and reconciliation of "present-centred" → "presence-centred" in §12.5.
+
 ## [2.4] — 2026-08-16
 
 ### Changed

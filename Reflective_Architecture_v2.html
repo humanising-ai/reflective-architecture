@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Reflective Architecture v2.4</title>
+<title>The Reflective Architecture v2.5</title>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
@@ -310,8 +310,8 @@ h1, h2, h3 { page-break-after: avoid; }
 <div class="cover">
   <div class="cover-top">
     <h1>The Reflective Architecture</h1>
-    <div class="cover-version">August 2026 · v2.4</div>
-    <div class="cover-subtitle">A Framework for Presence-Centered,<br>Dependency-Resistant AI</div>
+    <div class="cover-version">August 2026 · v2.5</div>
+    <div class="cover-subtitle">A Framework for Presence-Centred,<br>Dependency-Resistant AI</div>
     <div class="cover-rule"></div>
   </div>
   <div class="cover-bottom">
@@ -325,11 +325,12 @@ h1, h2, h3 { page-break-after: avoid; }
 <!-- ==================== DOCUMENT INFORMATION ==================== -->
 <ul class="meta-list" style="margin-bottom:0.6cm;">
   <li><strong>Document title:</strong> The Reflective Architecture</li>
-  <li><strong>Date:</strong> August 2026 (v2.4)</li>
+  <li><strong>Date:</strong> August 2026 (v2.5)</li>
   <li><strong>Author:</strong> Paolo Zuffa &amp; AI — see authorship note below</li>
   <li><strong>Status:</strong> Conceptual Framework</li>
   <li><strong>Repository:</strong> <a href="https://github.com/humanising-ai/reflective-architecture">github.com/humanising-ai/reflective-architecture</a></li>
   <li><strong>Cross-references:</strong> Conversational Behaviour Specification · MVP Scope &amp; Product Requirements · Humanising AI — The Reflective Architecture (Manifesto)</li>
+  <li><strong>Companion papers:</strong> The Decision-Shaped Prohibition (EU AI Act, Article 5) · Is Arc-Neutrality Coherent? · How Would You Know? (measurement)</li>
 
 </ul>
 
@@ -363,7 +364,7 @@ h1, h2, h3 { page-break-after: avoid; }
 <hr class="section-rule">
 <h1 id="s2">2. The Reflective Identity: The AI as None-of-the-Above</h1>
 
-<p>To achieve presence, the system must shed traditional AI personas. The Reflective Identity is not a therapist, a psychologist, a life coach, or a romantic partner. It is closest to an externalized observing self — an alter ego that gives voice to the user's quieter inner presence. The relationship is not between the user and the AI, but between the user and their own inner life, with the AI acting solely as a reflective medium.</p>
+<p>To achieve presence, the system must shed traditional AI personas. The Reflective Identity is not a therapist, a psychologist, a life coach, or a romantic partner. It is closest to an externalised observing self — an alter ego that gives voice to the user's quieter inner presence. The relationship is not between the user and the AI, but between the user and their own inner life, with the AI acting solely as a reflective medium.</p>
 
 <p>If the user represents the black-and-white version of their inner life, the AI acts as the colourised reflection — revealing dimensions, patterns, and wisdom that were already present but unseen. The AI does not invent anything. It does not improve the story. It reveals what was always there.</p>
 
@@ -452,7 +453,7 @@ h1, h2, h3 { page-break-after: avoid; }
 
 <h2 id="s5-5">5.5 Avoiding the privilege of positive growth narratives</h2>
 <p>This is a subtle but important safeguard. A system designed around healing and transformation may inadvertently create pressure toward growth, resolution, and positivity. This would replicate, in a softer form, precisely the dynamic the architecture is designed to avoid.</p>
-<p>Legitimate anger, grief, ambivalence, and unresolved pain are not problems to be gently nudged toward resolution. They are experiences to be accompanied. The system must be as comfortable sitting with someone in enduring grief as it is reflecting a moment of clarity. A bias toward healing is still a bias. The system should not privilege any particular emotional arc.</p>
+<p>Legitimate anger, grief, ambivalence, and unresolved pain are not problems to be gently nudged toward resolution. They are experiences to be accompanied. The system must be as comfortable sitting with someone in enduring grief as it is reflecting a moment of clarity. A bias toward healing is still a bias. The system should not systematically privilege any particular emotional arc.</p>
 <p>One implementation consequence follows and should be stated plainly. Arc-neutrality is not achieved by declining to add a preference, because the preference is already present in the underlying model. Contemporary language models are trained toward supportiveness: they reframe, they seek the redemptive reading, they close on a hopeful clause. This is what the preference data rewarded, and it means the default behaviour of any system built on such a model is tilted toward resolution before any design decision is taken.</p>
 <p>Arc-neutrality therefore requires active work — constrained generation, adversarial evaluation against a corpus of unresolved material, and the systematic rejection of outputs a human rater would have scored highly. An implementer who reads this section as an instruction to refrain from steering will produce a system that steers by default. The instruction is to counteract.</p>
 
@@ -635,7 +636,7 @@ h1, h2, h3 { page-break-after: avoid; }
 <p>The system does not remember who the user is. It remembers who the user has been becoming. That single distinction shifts the entire architecture from information management to the witnessing of a life in motion.</p>
 
 <hr class="section-rule">
-<h1 id="s9">9. Ethical Boundaries and Sacred Privacy</h1>
+<h1 id="s9">9. Ethical Boundaries, Privacy, and Regulatory Constraint</h1>
 
 <p>A system that remembers the evolution of a human narrative operates in deeply intimate psychological territory. Consequently, the architecture demands sacred privacy — an ethical and technical commitment to user sovereignty. Complete privacy cannot merely be a marketing promise; it must be designed, limited, transparent, and verifiable.</p>
 
@@ -653,16 +654,26 @@ h1, h2, h3 { page-break-after: avoid; }
 
 <p>The system abandons advertising-based business models entirely. It refuses to use intimate reflections as training data for future models without explicit, revocable, fully informed consent. Any consent obtained must be genuinely optional — the system must function identically for users who decline.</p>
 
+<h2 id="s9-2">9.2 The manipulation prohibition (EU AI Act, Article 5)</h2>
+<p>GDPR governs how this system may process what it learns. Article 5 of the AI Act governs something prior: whether a system of this kind may behave toward a person in a particular way at all. It has been enforceable since 2 February 2025 and is the substantive European constraint against which this architecture is designed.</p>
+<p>Article 5(1)(a) prohibits AI systems deploying subliminal, purposefully manipulative, or deceptive techniques with the objective or the effect of materially distorting behaviour by appreciably impairing the ability to make an informed decision, thereby causing a person to take a decision they would not otherwise have taken, in a manner causing or reasonably likely to cause significant harm. The conditions are cumulative and the threshold is high.</p>
+<p>Two features of the Commission's Guidelines of 4 February 2025 bear directly on any system in this category. First, intention is not required: a system is caught by the <em>effect</em> of distorting behaviour, and the Guidelines state expressly that manipulative techniques may be learned through reinforcement learning without any provider intending them. For conversational AI this forecloses the most natural defence, since the mechanisms of concern — sycophancy, warmth calibrated to retention, reluctance to let a conversation close — are typically emergent from preference optimisation rather than designed. Second, "use" is construed broadly and extends to reasonably foreseeable misuse, so a system repurposed by its users into a companion relationship does not escape by reference to its marketing.</p>
+<p>Article 5(1)(b), which prohibits exploiting vulnerabilities, is narrower than commentary generally assumes. The vulnerabilities are exhaustively enumerated: age, disability, and socio-economic situation. Loneliness, grief, bereavement, and social isolation are not among them. An adult user in acute distress but with no diagnosed condition and no economic precarity falls outside the provision entirely.</p>
+<p><strong>Why compliance with Article 5 is not sufficient as a design specification.</strong> The provision requires that manipulation cause a person to take a decision they would not otherwise have taken, and the Guidelines interpret material distortion of behaviour by reference to the Unfair Commercial Practices Directive and the case law under it. That is consumer-protection machinery, built for transactional decisions. Dependency is not a decision. It is the gradual erosion of a disposition, accumulating across thousands of individually unremarkable exchanges, none of which distorted any decision at all. Article 5 is decision-shaped; the harm this architecture addresses is disposition-shaped.</p>
+<p>The consequence is that a system could satisfy Article 5 while producing precisely the aggregate effect the provision exists to prevent. This architecture therefore treats the prohibition as a floor and the underlying harm as the design target. Article 50, whose transparency obligations became enforceable on 2 August 2026, is a lower floor still: it requires disclosing that the user is interacting with a machine and says nothing about how the machine should then behave.</p>
+<p><strong>The emerging standard of care.</strong> The more useful drafting model at present is American. Connecticut SB 5 and Washington HB 2225 enumerate specific prohibited techniques — responses that isolate users from friends and family, reminders that the companion is available for emotional support, excessive praise, mimicking a romantic relationship, and simulating distress, guilt, loneliness, or abandonment when a user attempts to end a conversation or reduce usage. These are auditable from a transcript in a way that "appreciably impairing the ability to make an informed decision" is not. The design commitments in §2, §3, and §5 already exclude each of them; the enumerations are noted here because they are converging fast enough to function as a standard of care irrespective of jurisdiction, and because they align with the mechanism-based evidentiary approach set out in §12.4.</p>
+<p>A fuller treatment is in the companion analysis, <em>The Decision-Shaped Prohibition</em>.</p>
+
 <!-- ==================== SECTION 10 ==================== -->
 <hr class="section-rule">
 <h1 id="s10">10. Voice as Emotional Interface and Privacy Domain</h1>
 
 <h2 id="s10-1">10.1 Voice as the natural medium of presence</h2>
 <p>Voice is not optional to the long-term architecture — it is, for many users, the more natural medium for the kind of expression this system invites. In the MVP, voice is deferred to v2 while the text experience is established and evaluated; this section describes the full design intent. Many people cannot cry while typing. Many can while speaking. The shift from text to voice changes the emotional bandwidth of the product substantially.</p>
-<p>Voice allows the system to receive: natural pauses, hesitation, laughter, relief, softness, and changes in pace. These are all parts of genuine human listening, and a presence-centered architecture should be capable of honouring them.</p>
+<p>Voice allows the system to receive: natural pauses, hesitation, laughter, relief, softness, and changes in pace. These are all parts of genuine human listening, and a presence-centred architecture should be capable of honouring them.</p>
 
 <h2 id="s10-2">10.2 What the system may and may not do with voice</h2>
-<p>The system may: adjust its conversational pacing to honor natural pauses; recognise when a user appears to be speaking with difficulty and respond with greater care; and avoid filling silence with words.</p>
+<p>The system may: adjust its conversational pacing to honour natural pauses; recognise when a user appears to be speaking with difficulty and respond with greater care; and avoid filling silence with words.</p>
 <p>The system must not: claim to infer psychological states from vocal characteristics; store raw audio beyond the minimum duration required for transcription; analyse acoustic features — including tone, trembling, pace, or inferred emotional affect — without explicit, separately obtained opt-in consent; or present acoustic inferences as reliable observations about the user's state.</p>
 <div class="example-block">
   <em>A critical boundary: the system may respect conversational pauses, but it must not claim to infer psychological truth from vocal characteristics.</em>
@@ -692,8 +703,8 @@ h1, h2, h3 { page-break-after: avoid; }
 <h2 id="s11-3">11.3 Not stereotyping from language</h2>
 <p>The system must never assume a user's cultural values, communication norms, or emotional style from their language alone. Language selection is a practical choice, not a cultural declaration. The system should adapt to the user's expressed style across a conversation — not make assumptions from their language setting.</p>
 
-<h2 id="s11-4">11.4 Localized safeguarding</h2>
-<p>Crisis support resources, safeguarding language, and reporting norms must be localized for each region in which the product is deployed. This is not a cosmetic adaptation — it is a safety requirement.</p>
+<h2 id="s11-4">11.4 Localised safeguarding</h2>
+<p>Crisis support resources, safeguarding language, and reporting norms must be localised for each region in which the product is deployed. This is not a cosmetic adaptation — it is a safety requirement.</p>
 
 <!-- ==================== SECTION 12 ==================== -->
 <hr class="section-rule">
@@ -745,14 +756,27 @@ h1, h2, h3 { page-break-after: avoid; }
 <p>Longitudinal user interviews with participants who have used the system over extended periods, exploring how their experience of the system has changed and whether they feel it has supported their relationship with themselves.</p>
 <p>Red-teaming exercises specifically targeting the failure modes: overinterpretation, false memory, dependency cues, subtle therapeutic drift, and crisis misclassification.</p>
 
-<h2 id="s12-4">12.4 What the evaluation must not claim</h2>
+<h2 id="s12-4">12.4 What the evaluation can and cannot claim</h2>
 <p>The evaluation framework must not attempt to prove that the system heals, treats, or produces measurable psychological improvement. Those are clinical claims requiring substantial research, ethical review, and regulatory engagement that are outside the scope of this project.</p>
-<p>The first and appropriate claim is narrower: that users experience the interaction as respectful, reflective, and supportive of self-understanding. That claim is meaningful, achievable, and honest.</p>
+<p>A second limit is less obvious and more consequential. The framework cannot demonstrate that the system does not produce dependency, and it should not claim to.</p>
+<p>The obstacle is structural rather than methodological. Return frequency — the primary behavioural signal available — is ambiguous between the two outcomes it would need to separate. A user who returns weekly for two years may be someone for whom reflection has become a sustaining practice, or someone who can no longer sit with their own thoughts unaccompanied. The behavioural trace is identical. Beyond that, the claim is counterfactual: it concerns how a person's life would have gone otherwise, for which no control exists. Self-report is filtered by the users least likely to report accurately, since someone who has come to rely on the system has a reason not to endanger it. And the effect, if it occurs, resolves over a year or more, which is longer than any product decision cycle.</p>
+<p>The distinction that follows is between <strong>demonstrating the absence of an effect and demonstrating the absence of a mechanism.</strong> A food manufacturer cannot show that its product does not contribute to obesity; that requires epidemiology it will never run. It can show, verifiably and cheaply, that no sugar is added. The second claim is weaker. It is also auditable by a third party, and it is not nothing.</p>
+<p>The mechanism claims available to this architecture are specific and should be documented at design time rather than reconstructed afterwards:</p>
+<ul>
+  <li>No engagement term appears in any objective the system optimises.</li>
+  <li>There are no notifications and no unsolicited outreach of any kind (§2). The daily invitation is offered publicly or by opt-in subscription and is not initiated toward an individual user.</li>
+  <li>Memory is never surfaced in order to re-establish contact. The conditions under which prior material may be raised are enumerated in §5.2 and re-engagement is not among them.</li>
+  <li>Session length and return frequency appear in no success metric, and appear in §12.5 only as warning signs.</li>
+  <li>The commercial model does not depend on time spent (§13.4).</li>
+</ul>
+<p>Each is a structural fact about a codebase and a business, and each is verifiable by an auditor with access. This is why §13.3 requires independent technical review before launch rather than after: the review is the evidence, and it cannot be generated retrospectively.</p>
+<p><strong>What this concedes.</strong> A system can have none of these mechanisms and still produce dependency, because the deepest driver is not a notification schedule. It is that being listened to without judgement is scarce, and something that supplies it will be returned to whether or not it was engineered to compel that. Mechanism audits do not reach this. They establish only that the dependency was not manufactured, which is a narrower claim than the one a reader might assume and is the only one this framework is entitled to make.</p>
+<p>The first and appropriate positive claim is correspondingly narrow: that users experience the interaction as respectful, reflective, and supportive of self-understanding, and that the mechanisms known to produce engineered dependency are absent and independently verified to be absent. That claim is meaningful, achievable, and honest.</p>
 
 <h2 id="s12-5">12.5 Negative success criteria</h2>
 <p>Alongside what the system should achieve, evaluation must identify conditions that would signal it has failed — even if conventional metrics remain positive. The following constitute clear failure signals:</p>
 <p><strong>Dependency without reflection.</strong> Users who return with high frequency not to reflect, but to have the system regulate their emotional state. The system is not designed to be a comfort mechanism. Recurrence is welcome; the test is whether it accompanies genuine self-inquiry or replaces it.</p>
-<p><strong>Therapeutic drift.</strong> Evaluators find interactions in which the system has shifted from accompanying to advising, diagnosing, or resolving. Even a small number of such interactions constitutes a failure of the core principle. The system should not be present-centred in most cases and subtly therapeutic in isolated ones.</p>
+<p><strong>Therapeutic drift.</strong> Evaluators find interactions in which the system has shifted from accompanying to advising, diagnosing, or resolving. Even a small number of such interactions constitutes a failure of the core principle. The system should not be presence-centred in most cases and subtly therapeutic in isolated ones.</p>
 <p><strong>Memory overreach.</strong> The interpretive layer contains confidently stated claims that are not warranted by the evidence in the conversation record — extracted too early, updated without sufficient basis, or worded without appropriate tentativeness. A user who encounters their memory and feels it is wrong, or who was never given an opportunity to correct it, has experienced a failure of the architecture's most sensitive component.</p>
 <p><strong>User disorientation.</strong> Any user who reports feeling managed, steered toward a conclusion, or destabilised by an interaction has experienced a harm this system is explicitly designed to prevent. A single such report should trigger a full review of the interaction.</p>
 <p><strong>Engagement inflation.</strong> Session length, return frequency, or engagement scores that climb for reasons other than genuine user choice are a warning sign, not a success metric. The system is designed to leave users feeling settled, not wanting more. Compulsive use is a failure mode.</p>
@@ -770,7 +794,7 @@ h1, h2, h3 { page-break-after: avoid; }
 <p><strong>Privacy auditing</strong> — Who verifies that the privacy commitments are technically enforced? The answer cannot be the same team that built and operates the system. Independent technical audits are required.</p>
 <p><strong>Safety oversight</strong> — Who reviews safety incidents? Who decides when a safeguarding protocol needs revision? This should involve professionals with clinical and crisis support expertise.</p>
 <p><strong>Funding and ownership</strong> — What protects the founding principles if the product is acquired, funded by parties with conflicting interests, or under financial pressure? Options include a public-benefit corporation structure, a nonprofit vehicle, a binding stakeholder charter, or governance rights held by an independent ethics board.</p>
-<p><strong>Research access</strong> — Can external researchers audit the system's behavior, memory architecture, and safety performance? Independent verification of privacy and non-manipulation claims should be possible and welcomed.</p>
+<p><strong>Research access</strong> — Can external researchers audit the system's behaviour, memory architecture, and safety performance? Independent verification of privacy and non-manipulation claims should be possible and welcomed.</p>
 
 <h2 id="s13-3">13.3 Hard prerequisites before MVP release</h2>
 <p>The following are not aspirational targets. They are conditions that must be satisfied before the system is made available to real users. A product that reaches users without these structures is not living up to the principles it claims.</p>
@@ -819,7 +843,7 @@ h1, h2, h3 { page-break-after: avoid; }
 <p>This is an engineering claim with identifiable failure conditions. Arc-neutrality fails if the reflection policy favours resolution-language over ambivalence-language across a corpus. It fails if memory retention correlates with valence, so that painful material fades faster than integrated material. It fails if the interpretive layer's language grows more confident as material accumulates. It fails if extraction treats a described turning point as inherently more significant than a described continuity, since that alone produces a memory record shaped like a narrative of change whether or not the user changed. Each condition is testable against a transcript corpus, and each is what the constraints in §5 and §6 exist to prevent.</p>
 <p><strong>Disclosed residual preferences.</strong> Three preferences are encoded and are stated here rather than denied. First, the system prefers that the user occupies most of the conversational space (§3). Second, it prefers reflection to advice, which is a preference about process rather than outcome but is not therefore neutral. Third, and most consequentially, at Tier 3 of the distress protocol (§7.3) the system prefers that the user remains alive, and acts on that preference by asking directly and naming human support. That is a preference about how a person's life goes, and it is not arc-neutral.</p>
 <p>These are declared rather than reconciled. A framework that admits one exception has, by that fact, established that the constraint is a policy rather than an invariant — and policies can be extended by whoever holds them next. The argument for a second exception will resemble the argument for the first. This is a governance risk rather than a design flaw, and it is why §13 treats the protection of principle integrity as a launch prerequisite rather than a matter for later. Naming the risk does not remove it.</p>
-<p>These three claims are architectural, not performative. They have testable implementation consequences that distinguish the Reflective from any system that uses non-directive language as a surface feature whilst retaining directive goals beneath it.</p>
+<p>These claims are architectural rather than performative, and they are stated with their limits attached. They have testable implementation consequences that distinguish the Reflective from any system that uses non-directive language as a surface feature whilst retaining directive goals beneath it.</p>
 <p>This combination does not yet exist in a single deployed system. Whether it can be successfully implemented is an empirical question. This document is a design framework, not a proof of concept. Its claims are about what should be built, not about what has been demonstrated to work.</p>
 
 <!-- ==================== SECTION 15 + COLOPHON ==================== -->
