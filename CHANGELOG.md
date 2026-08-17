@@ -3,6 +3,16 @@
 All notable changes to The Reflective Architecture are documented here.
 This project follows a simple versioning scheme tied to the core Architecture document.
 
+## [2.6] — 2026-08-17
+
+### Changed
+- **§9 preamble expanded** to introduce the regulatory dimension of the section ("Privacy is where this obligation begins but not where it ends"), signposting §9.1 (data-protection obligations) and §9.2 (manipulation prohibition) explicitly. Makes the retitled section heading ("Ethical Boundaries, Privacy, and Regulatory Constraint") earned by the opening paragraph.
+- **Companion cross-links added to body sections:** §14.3 now points to *Is Arc-Neutrality Coherent?* and §12.4 now points to *How Would You Know?*, mirroring the cross-link pattern already established in §9.2 for *The Decision-Shaped Prohibition*.
+- **Abstract updated** to name the regulatory analysis: "the regulatory constraints that bind a system of this kind, including the EU AI Act's prohibition on manipulation" inserted into the enumeration of design questions, so the abstract advertises the §9.2 material rather than hiding it.
+
+### Editorial
+- These are consistency tweaks following the v2.5 review — each closes a gap between what a section now contains and how it is titled, introduced, or cross-referenced. No substantive change to the framework.
+
 ## [2.5] — 2026-08-16
 
 ### Added

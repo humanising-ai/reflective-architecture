@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Reflective Architecture v2.5</title>
+<title>The Reflective Architecture v2.6</title>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
@@ -310,7 +310,7 @@ h1, h2, h3 { page-break-after: avoid; }
 <div class="cover">
   <div class="cover-top">
     <h1>The Reflective Architecture</h1>
-    <div class="cover-version">August 2026 · v2.5</div>
+    <div class="cover-version">August 2026 · v2.6</div>
     <div class="cover-subtitle">A Framework for Presence-Centred,<br>Dependency-Resistant AI</div>
     <div class="cover-rule"></div>
   </div>
@@ -325,7 +325,7 @@ h1, h2, h3 { page-break-after: avoid; }
 <!-- ==================== DOCUMENT INFORMATION ==================== -->
 <ul class="meta-list" style="margin-bottom:0.6cm;">
   <li><strong>Document title:</strong> The Reflective Architecture</li>
-  <li><strong>Date:</strong> August 2026 (v2.5)</li>
+  <li><strong>Date:</strong> August 2026 (v2.6)</li>
   <li><strong>Author:</strong> Paolo Zuffa &amp; AI — see authorship note below</li>
   <li><strong>Status:</strong> Conceptual Framework</li>
   <li><strong>Repository:</strong> <a href="https://github.com/humanising-ai/reflective-architecture">github.com/humanising-ai/reflective-architecture</a></li>
@@ -339,7 +339,7 @@ h1, h2, h3 { page-break-after: avoid; }
 <div class="abstract-label">Abstract</div>
 <div class="abstract-block">
   <p>Current Large Language Model architectures are optimised for information retrieval, task completion, and engagement. While highly effective as answer engines, they are not principally designed to address the human need for deep introspection and self-reconnection. This document proposes the Reflective Architecture — a design philosophy and technical framework for an artificial intelligence that listens more than it speaks, reflects rather than advises, and builds a transformational memory that tracks a user's emotional and philosophical evolution over time.</p>
-  <p>This document addresses the following design questions in operational terms: the operational boundary between reflection and therapy; the ethics of selective memory and subtle influence; memory confidence, provenance, and user control; the precise formulation of intentional forgetting; responding to moments of acute distress; voice as a privacy and consent domain; cultural and multilingual adaptation; a rigorous evaluation framework; and governance structures that protect the founding principles over time.</p>
+  <p>This document addresses the following design questions in operational terms: the operational boundary between reflection and therapy; the ethics of selective memory and subtle influence; memory confidence, provenance, and user control; the precise formulation of intentional forgetting; responding to moments of acute distress; voice as a privacy and consent domain; cultural and multilingual adaptation; the regulatory constraints that bind a system of this kind, including the EU AI Act's prohibition on manipulation; a rigorous evaluation framework; and governance structures that protect the founding principles over time.</p>
   <p>By shifting the design principle from response generation to procedural presence, the system is designed not to solve the user's problems, but to act as a cognitive mirror — making the user's own inner narrative visible and allowing new meanings to emerge. This document moves that thesis from philosophical vision to an operationally grounded framework.</p>
 </div>
 
@@ -638,7 +638,7 @@ h1, h2, h3 { page-break-after: avoid; }
 <hr class="section-rule">
 <h1 id="s9">9. Ethical Boundaries, Privacy, and Regulatory Constraint</h1>
 
-<p>A system that remembers the evolution of a human narrative operates in deeply intimate psychological territory. Consequently, the architecture demands sacred privacy — an ethical and technical commitment to user sovereignty. Complete privacy cannot merely be a marketing promise; it must be designed, limited, transparent, and verifiable.</p>
+<p>A system that remembers the evolution of a human narrative operates in deeply intimate psychological territory. Consequently, the architecture demands sacred privacy — an ethical and technical commitment to user sovereignty. Complete privacy cannot merely be a marketing promise; it must be designed, limited, transparent, and verifiable. Privacy is where this obligation begins but not where it ends: the same territory places a system of this kind inside a specific and hardening regulatory perimeter — data-protection law, the AI Act's prohibition on manipulation, and an emerging standard of care — which this section treats not as external compliance to be met after the fact but as a design constraint the architecture was built to satisfy. §9.1 addresses the data-protection obligations; §9.2 addresses the manipulation prohibition.</p>
 
 <h2 id="s9-1">9.1 Data protection obligations (EU/GDPR)</h2>
 <p>By design, this system will process data about users' emotional states, mental health, beliefs, relationships, and personal values. Under GDPR Article 9, data revealing health, religious or philosophical beliefs, and data concerning a person's mental state are <strong>special-category data</strong> requiring explicit consent and additional safeguards beyond ordinary personal data.</p>
@@ -772,6 +772,7 @@ h1, h2, h3 { page-break-after: avoid; }
 <p>Each is a structural fact about a codebase and a business, and each is verifiable by an auditor with access. This is why §13.3 requires independent technical review before launch rather than after: the review is the evidence, and it cannot be generated retrospectively.</p>
 <p><strong>What this concedes.</strong> A system can have none of these mechanisms and still produce dependency, because the deepest driver is not a notification schedule. It is that being listened to without judgement is scarce, and something that supplies it will be returned to whether or not it was engineered to compel that. Mechanism audits do not reach this. They establish only that the dependency was not manufactured, which is a narrower claim than the one a reader might assume and is the only one this framework is entitled to make.</p>
 <p>The first and appropriate positive claim is correspondingly narrow: that users experience the interaction as respectful, reflective, and supportive of self-understanding, and that the mechanisms known to produce engineered dependency are absent and independently verified to be absent. That claim is meaningful, achievable, and honest.</p>
+<p>A fuller treatment of what the evaluation can and cannot demonstrate is in the companion analysis, <em>How Would You Know?</em></p>
 
 <h2 id="s12-5">12.5 Negative success criteria</h2>
 <p>Alongside what the system should achieve, evaluation must identify conditions that would signal it has failed — even if conventional metrics remain positive. The following constitute clear failure signals:</p>
@@ -844,6 +845,7 @@ h1, h2, h3 { page-break-after: avoid; }
 <p><strong>Disclosed residual preferences.</strong> Three preferences are encoded and are stated here rather than denied. First, the system prefers that the user occupies most of the conversational space (§3). Second, it prefers reflection to advice, which is a preference about process rather than outcome but is not therefore neutral. Third, and most consequentially, at Tier 3 of the distress protocol (§7.3) the system prefers that the user remains alive, and acts on that preference by asking directly and naming human support. That is a preference about how a person's life goes, and it is not arc-neutral.</p>
 <p>These are declared rather than reconciled. A framework that admits one exception has, by that fact, established that the constraint is a policy rather than an invariant — and policies can be extended by whoever holds them next. The argument for a second exception will resemble the argument for the first. This is a governance risk rather than a design flaw, and it is why §13 treats the protection of principle integrity as a launch prerequisite rather than a matter for later. Naming the risk does not remove it.</p>
 <p>These claims are architectural rather than performative, and they are stated with their limits attached. They have testable implementation consequences that distinguish the Reflective from any system that uses non-directive language as a surface feature whilst retaining directive goals beneath it.</p>
+<p>A fuller treatment of this claim, and of the counterexamples it must survive, is in the companion analysis, <em>Is Arc-Neutrality Coherent?</em></p>
 <p>This combination does not yet exist in a single deployed system. Whether it can be successfully implemented is an empirical question. This document is a design framework, not a proof of concept. Its claims are about what should be built, not about what has been demonstrated to work.</p>
 
 <!-- ==================== SECTION 15 + COLOPHON ==================== -->
