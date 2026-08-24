@@ -3,6 +3,11 @@
 All notable changes to The Reflective Architecture are documented here.
 This project follows a simple versioning scheme tied to the core Architecture document.
 
+## [2.9] — 2026-08-24
+
+### Fixed
+- **Manifesto cover image restored** — the sphere image ("The Silent Garden") on the Manifesto's first page was referencing a non-existent external file path and had disappeared from the PDF. The cover image is now extracted and stored in the repository as `manifesto_cover.jpg` and referenced via relative path, ensuring it appears correctly in the generated PDF and remains version-controlled with the document.
+
 ## [2.8] — 2026-08-24
 
 ### Added
