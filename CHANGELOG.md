@@ -3,6 +3,26 @@
 All notable changes to The Reflective Architecture are documented here.
 This project follows a simple versioning scheme tied to the core Architecture document.
 
+## [2.8] — 2026-08-24
+
+### Added
+- **Three companion papers published** — short analyses developing the open problems raised in the main Architecture document:
+  - *The Decision-Shaped Prohibition* (4 pages) — analysis of what Article 5 of the AI Act does and does not reach when applied to emotionally intimate conversational systems. Argues that the provision is decision-shaped while dependency is disposition-shaped, creating a category mismatch where the ordinary case (an adult, competent, not in crisis, who over eighteen months comes to rely on a system that was never designed to make them) falls outside the prohibition entirely.
+  - *Is Arc-Neutrality Coherent?* (4 pages) — addresses whether a system can decline to prefer an outcome for its user, conceding that local neutrality is impossible and the substrate is not neutral, while defending a narrower claim: the absence of *accumulating* preference over the person's emotional trajectory (unbiased error rather than no error). Acknowledges the Tier 3 distress exception as a genuine weakening that makes arc-neutrality a policy rather than a structural invariant.
+  - *How Would You Know?* (4 pages) — the measurement problem for dependency-resistant AI. Argues that the primary signal (retention) is inverted and ambiguous, and that outcome verification is not available pre-launch. Proposes a fallback: demonstrating the absence of *mechanisms* (no engagement term in any objective, no unsolicited outreach, no memory surfaced to re-establish contact) rather than the absence of *effect*, which is the honest claim that survives.
+- **README substantially expanded** — now a comprehensive introduction covering:
+  - Three core commitments presented as testable design decisions (user veto over memory formation, memory as chronology not facts, arc-neutrality)
+  - Open problems section naming measurement, arc-neutrality limits, and extraction reliability as the unresolved questions where challenge would be most useful
+  - Regulatory context detailing active scrutiny (EU AI Act Article 5 & 50, US FTC inquiry, state legislation) and the argument for architectural rather than compliance-only approaches
+  - Full document map including the three companion papers
+  - Expanded commercial use and licensing section
+
+### Changed
+- **README.pdf regenerated** (5 pages, up from 2 pages) to reflect the expanded markdown source.
+
+### Editorial
+- The companion papers develop arguments raised but not resolved in the main Architecture document (§9.2 for the Article 5 analysis, §14.3 and §5 for arc-neutrality, §12.4–12.5 for measurement). They are standalone analyses rather than amendments to the framework, so the Architecture version remains at 2.7.
+
 ## [2.7] — 2026-08-21
 
 ### Changed
