@@ -3,6 +3,12 @@
 All notable changes to The Reflective Architecture are documented here.
 This project follows a simple versioning scheme tied to the core Architecture document.
 
+## [2.10] — 2026-08-26
+
+### Added
+- **DOI badge** — Zenodo DOI badge (10.5281/zenodo.22113311) added to the very top of README.md, providing a permanent citable identifier for the work. The badge links directly to the Zenodo record.
+- **README.pdf regenerated** to include the DOI badge.
+
 ## [2.9] — 2026-08-24
 
 ### Fixed
