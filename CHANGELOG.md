@@ -3,6 +3,14 @@
 All notable changes to The Reflective Architecture are documented here.
 This project follows a simple versioning scheme tied to the core Architecture document.
 
+## [2.11] — 2026-10-06
+
+### Added
+- **New companion essay** — *Manipulation Takes Place Through the Machine, Not the Message* (`Reflective_Manipulation_Machine_Not_Message.pdf`, 6 pages). Argues that the persuasion/manipulation line cannot be drawn from a transcript — it runs through the machine (training, objective, design intent) — and that Article 5 and Article 50 both fail for the same underlying reason. Makes the case for regulating the mechanism rather than the message. (File was uploaded directly to the repository; verified byte-identical and valid, and now listed in the README.)
+
+### Changed
+- **README** — the companion-papers section now lists four papers (adding the new manipulation essay as the first entry), with the intro line updated accordingly. README.pdf regenerated.
+
 ## [2.10] — 2026-08-26
 
 ### Added

@@ -61,10 +61,11 @@ Read in this order for a first pass:
 | 3 | [**Conversational Behaviour Specification** *(CBS)*](https://github.com/humanising-ai/reflective-architecture/blob/main/Reflective_CBS_v1.pdf) | The operational rules for how the system speaks — written to be verifiable from a transcript. |
 | 4 | [**MVP Scope & Product Requirements**](https://github.com/humanising-ai/reflective-architecture/blob/main/Reflective_MVP_v1.pdf) | What the first buildable version is, is not, and defers. A constraint document as much as a requirements document. |
 
-Three short papers develop the open problems above — on Article 5 and what it does not reach, on whether arc-neutrality is coherent, and on how dependency-resistance could be measured:
+Four short papers develop the open problems above — on why manipulation cannot be read off the message, on Article 5 and what it does not reach, on whether arc-neutrality is coherent, and on how dependency-resistance could be measured:
 
 | Companion paper | What it is |
 |---|---|
+| [**Manipulation Takes Place Through the Machine, Not the Message**](https://github.com/humanising-ai/reflective-architecture/blob/main/Reflective_Manipulation_Machine_Not_Message.pdf) | Why the persuasion/manipulation line cannot be drawn from a transcript — and why Articles 5 and 50 both fail for the same reason. The case for regulating the mechanism, not the message. |
 | [**The Decision-Shaped Prohibition** *(Article 5 analysis)*](https://github.com/humanising-ai/reflective-architecture/blob/main/Reflective_Decision_Shaped_Prohibition_v1.pdf) | What Article 5 does and does not reach: decision-shaped law against disposition-shaped harm. |
 | [**Is Arc-Neutrality Coherent?**](https://github.com/humanising-ai/reflective-architecture/blob/main/Reflective_Arc_Neutrality_v1.pdf) | Whether a system can decline to prefer an outcome for its user — and where the claim gives way. |
 | [**How Would You Know?** *(measurement)*](https://github.com/humanising-ai/reflective-architecture/blob/main/Reflective_Measuring_Dependency_v1.pdf) | Why dependency-resistance is hard to verify, and the mechanism-not-effect claim that survives. |
