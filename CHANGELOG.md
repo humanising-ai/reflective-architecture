@@ -3,6 +3,21 @@
 All notable changes to The Reflective Architecture are documented here.
 This project follows a simple versioning scheme tied to the core Architecture document.
 
+## [2.12] — 2026-10-07
+
+### Changed
+- **Zenodo deposit restructured into a hybrid layout.** The main Zenodo record previously held a single repository `.zip`, which readers could not open in the browser. It now archives the four **core documents** (Architecture, CBS, MVP, Manifesto) as separate, individually viewable PDFs under the existing concept DOI.
+- **DOI badge and citation now use the concept DOI** `10.5281/zenodo.22113310` (the "Cite all versions" DOI that always resolves to the newest version) instead of a version-specific DOI, so they never go stale on future releases.
+- **README Citation section** expanded with a table of all five permanent DOIs (core set plus the four companion papers), each individually citable.
+- **CITATION.cff** updated: concept DOI added, author ORCID (`0009-0006-3649-6345`) added, version bumped to 2.12-era metadata, date updated.
+
+### Added
+- **Four companion papers now archived as standalone Zenodo records**, each with its own DOI and each cross-linked (as a supplement) to the main concept DOI:
+  - *Manipulation Takes Place Through the Machine, Not the Message* — 10.5281/zenodo.23216610
+  - *Does Clearing the Article 5 Prohibition Make a Companion AI Safe?* (the Decision-Shaped Prohibition analysis) — 10.5281/zenodo.22236063
+  - *Is Arc-Neutrality Coherent?* (newly deposited) — 10.5281/zenodo.23218850
+  - *Regulating AI Companions: Stop Chasing the Harm You Can't Measure* (the measurement analysis) — 10.5281/zenodo.22235413
+
 ## [2.11] — 2026-10-06
 
 ### Added

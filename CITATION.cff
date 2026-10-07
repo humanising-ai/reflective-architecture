@@ -5,10 +5,16 @@ authors:
   - family-names: Zuffa
     given-names: Paolo
     email: paolo.zuffa@gmail.com
-date-released: 2026-08-21
+    orcid: "https://orcid.org/0009-0006-3649-6345"
+date-released: 2026-10-07
 url: "https://github.com/humanising-ai/reflective-architecture"
+doi: "10.5281/zenodo.22113310"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22113310"
+    description: "Concept DOI (always resolves to the latest version)"
 license: CC-BY-NC-4.0
-version: "2.7"
+version: "2.11"
 type: software
 keywords:
   - artificial intelligence

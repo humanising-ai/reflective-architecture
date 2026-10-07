@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22113311.svg)](https://doi.org/10.5281/zenodo.22113311)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22113310.svg)](https://doi.org/10.5281/zenodo.22113310)
 
 
 # The Reflective Architecture
@@ -82,7 +82,17 @@ Conceptual framework, published openly for critique. The documents are a startin
 
 ## Citation
 
-> Zuffa, P. (2026). *The Reflective Architecture: A Framework for Presence-Centred, Dependency-Resistant AI.* Humanising AI. https://github.com/humanising-ai/reflective-architecture
+> Zuffa, P. (2026). *The Reflective Architecture: A Framework for Presence-Centred, Dependency-Resistant AI.* Zenodo. https://doi.org/10.5281/zenodo.22113310
+
+The DOI above is the **concept DOI** — it always resolves to the latest version. The four core documents (Architecture, CBS, MVP, Manifesto) are archived together under it. Each companion paper is a separate, individually citable record:
+
+| Record | DOI (always-latest) |
+|---|---|
+| The Reflective Architecture *(core set)* | [10.5281/zenodo.22113310](https://doi.org/10.5281/zenodo.22113310) |
+| Manipulation Takes Place Through the Machine, Not the Message | [10.5281/zenodo.23216610](https://doi.org/10.5281/zenodo.23216610) |
+| Does Clearing the Article 5 Prohibition Make a Companion AI Safe? *(Decision-Shaped Prohibition)* | [10.5281/zenodo.22236063](https://doi.org/10.5281/zenodo.22236063) |
+| Is Arc-Neutrality Coherent? | [10.5281/zenodo.23218850](https://doi.org/10.5281/zenodo.23218850) |
+| Regulating AI Companions: Stop Chasing the Harm You Can't Measure *(How Would You Know?)* | [10.5281/zenodo.22235413](https://doi.org/10.5281/zenodo.22235413) |
 
 A machine-readable `CITATION.cff` is included.
 
